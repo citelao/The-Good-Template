@@ -1,0 +1,314 @@
+/* @group Reset */
+/* (ericmeyer) */
+/* @end */
+
+/* @group Debug */
+.debug body {
+	background: url('../img/debug/baseline.png');
+}
+
+.debug input,
+.debug .error,
+.debug .info,
+.debug .success,
+.debug .warning,
+.debug tr:nth-child(even) {
+	background: 0;
+}
+/* @end */
+
+/* @group Base */
+
+	body {
+		font-size: 100%;
+		
+		margin: 0 auto;
+		
+		max-width: 960px;
+		width: 100%;
+	}
+	
+	#main, footer {
+		font: 1em/24px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+		padding: 5px;
+	}
+	
+		footer {
+			text-align: center;
+			padding: 19px 24px;
+		}
+	
+	/* @group Headers */
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		h7 {
+			font-weight: bold;
+		/*		margin: 12px 0;*/
+		}
+		
+		h1 {
+			font-size: 3em;
+			line-height: 48px;
+		}
+		
+		h2 {
+			font-size: 2.5em;
+			line-height: 48px;
+		}
+		
+		h3 {
+			font-size: 2em;
+			line-height: 24px;
+		}
+		
+		h4 {
+			font-size: 1.5em;
+			line-height: 24px;
+		}
+		
+		h5 {
+			font-size: 1.2em;
+			line-height: 24px;
+		}
+	/* @end */
+	
+	/* @group Blockquotes, Lists, Definition Lists */
+		blockquote,
+		ol,
+		ul {
+			margin: 24px 1.5em;
+		}
+		
+			ol ol,
+			ol ul,
+			ul ul {
+				margin: 0 1.5em;
+			} 
+		
+		ol {
+			list-style: decimal;
+		}
+			
+		ul {
+			list-style: square;
+		}
+		
+		dl {
+			margin: 24px 0;
+		}
+		
+			dt {
+				font-weight: bold;
+			}
+			
+			dd {
+				margin: 0 1.5em;
+			}
+	/* @end */
+
+
+	/* @group Tables */
+		table {
+			border: 1px solid #ccc;
+			margin: 36px 1.5em 36px;
+			padding: 0;
+		}
+			
+			caption {
+				margin: 12px;
+				font-size: 1.2em;
+				font-weight: bold;
+				line-height: 24px;
+			}
+			
+			th {
+				color: #999;
+				font-weight: bold;
+				padding: 12px 1.5em 10px 1.5em;
+				border-bottom: 1px solid #ccc;
+			}
+			
+			td {
+				padding: 12px 1.5em 11px;
+				border-bottom: 1px solid #ccc;
+			}
+			
+				tr:nth-child(even) {
+					background: #fbfbfb;
+				}
+			
+			/* if your table does not have a footer, add the class `no-footer` */
+			tfoot td,
+			.no-footer tr:last-child td {
+				 border: 0;
+			}
+			
+				tfoot td {
+					font-weight: bold;
+				}
+	/* @end */
+	
+	/* @group Inline Text */
+		a {
+			text-decoration: none;
+		}
+		
+			a:hover {
+				text-decoration: underline;
+			}
+			
+		acronym[title] {
+			border-bottom: 1px dotted #666;
+			cursor: help;
+		}
+		
+		big {
+			font-size: 1.5em;
+			line-height: 0;
+		}
+		
+		cite {
+			color: #999;
+		}	
+		
+			cite:before {
+				content: "– ";
+			}
+		
+		del {
+			color: #ccc;
+		}
+		
+		em {
+			font-style: italic;
+		}
+		
+		hr {
+			margin: 23px 11px 24px 11px;
+			padding: 0;
+			border: 0;
+			border-top: 1px solid #ccc;
+		}
+		
+		kbd {
+			border: 1px solid #ccc;
+			border-radius: 2px;
+			padding: 2px;
+			margin: 2px;
+		}
+		
+		p {
+			margin: 24px 0;
+		}
+		
+		small {
+			font-size: .7em;
+			line-height: 0;
+		}
+		
+		strong {
+			font-weight: bold;
+		}
+		
+		sub,
+		sup {
+			font-size: 75%; 
+			line-height: 0; 
+			position: relative; 
+			vertical-align: baseline;
+		}
+		
+			sub {
+				bottom: -.5em;
+			}
+			
+			sup {
+				top: -.5em;
+			}
+			
+	/* @end */
+	
+	/* @group Forms */
+		form {
+			padding: 0;	
+		}
+		
+		input {
+			display: inline-block;
+			
+			border: 1px solid #ccc;
+			
+			line-height: insherit;
+			margin: 18px 2px 16px;
+			padding: 6px 12px;
+			
+			font: inherit;
+		}
+		
+			::-webkit-input-placeholder {
+				/* fix espresso/safari bug */
+			}
+			
+		/* colors from http://www.jankoatwarpspeed.com/post/2008/05/22/CSS-Message-Boxes-for-different-message-types.aspx */
+		.error,
+		.info,
+		.success,
+		.warning {
+			border: 1px solid;
+			margin: 2px 0;
+			padding: 10px 1.5em;
+		}
+		
+			.error {
+				background: #FFBABA;
+				color: #D8000C;
+			}
+			
+			.info {
+				background: #bde5f8;
+				color: #00529b;
+			}
+			
+			.success {
+				background: #dff2bf;
+				color: #4F8A10;
+			}
+			
+			.warning {
+				background: #feefb3;
+				color: #9F6000;
+			}
+	/* @end */
+/* @end */
+
+/* @group Main */
+
+/* @end */
+
+@media print  {
+
+	* { 
+		background: transparent !important; 
+		color: black !important; 
+		text-shadow: none !important; 
+		filter:none !important;
+		-ms-filter: none !important; 
+	}
+	
+	a:after {
+		content: " &lt;" attr(href) "&rt;";
+	}
+	
+	abbr:after {
+		content: " (" attr(title) ")";
+	}
+	
+	#site-nav {
+		display: none;
+	}
+
+}
