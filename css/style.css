@@ -1,314 +1,190 @@
 /* @group Reset */
-/* (ericmeyer) */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+header, section {
+  display: block;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: #333;
+  background: #fff;
+}
+ol, ul {
+  list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}
 /* @end */
-
+/* @group Typography */
+body {
+  font: 16px/21px Arial, sans-serif;
+  margin: 20px auto;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  padding-bottom: 21px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 40px;
+  line-height: 42px;
+  padding-top: 2px;
+  margin-bottom: -2px;
+}
+h2 {
+  font-size: 30px;
+  line-height: 42px;
+  padding-top: 6px;
+  margin-bottom: -6px;
+}
+h3 {
+  font-size: 24px;
+  line-height: 42px;
+  padding-top: 8px;
+  margin-bottom: -8px;
+}
+h4 {
+  font-size: 18px;
+  line-height: 21px;
+}
+/* @end  */
+/* @group Layout */
+/* @group Basic (320px) */
+body {
+  width: 320px;
+}
+header, section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10px 21px;
+}
+nav li {
+  display: inline;
+}
+nav li a {
+  text-decoration: none;
+}
+/* @end */
+@media screen and (min-width: 480px) {
+  body {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 600px) {
+  body {
+    width: 600px;
+  }
+  header.600half, section.600half {
+    width: 50%;
+    float: right;
+  }
+}
+@media screen and (min-width: 960px) {
+  body {
+    width: 960px;
+  }
+  .960half {
+    width: 50%;
+    float: right;
+  }
+}
+/* @end */
 /* @group Debug */
 .debug body {
-	background: url('../img/debug/baseline.png');
-}
-
-.debug input,
-.debug .error,
-.debug .info,
-.debug .success,
-.debug .warning,
-.debug tr:nth-child(even) {
-	background: 0;
+  background: url('../img/debug/Baseline.png');
 }
 /* @end */
-
-/* @group Base */
-
-	body {
-		font-size: 100%;
-		
-		margin: 0 auto;
-		
-		max-width: 960px;
-		width: 100%;
-	}
-	
-	#main, footer {
-		font: 1em/24px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-		padding: 5px;
-	}
-	
-		footer {
-			text-align: center;
-			padding: 19px 24px;
-		}
-	
-	/* @group Headers */
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		h7 {
-			font-weight: bold;
-		/*		margin: 12px 0;*/
-		}
-		
-		h1 {
-			font-size: 3em;
-			line-height: 48px;
-		}
-		
-		h2 {
-			font-size: 2.5em;
-			line-height: 48px;
-		}
-		
-		h3 {
-			font-size: 2em;
-			line-height: 24px;
-		}
-		
-		h4 {
-			font-size: 1.5em;
-			line-height: 24px;
-		}
-		
-		h5 {
-			font-size: 1.2em;
-			line-height: 24px;
-		}
-	/* @end */
-	
-	/* @group Blockquotes, Lists, Definition Lists */
-		blockquote,
-		ol,
-		ul {
-			margin: 24px 1.5em;
-		}
-		
-			ol ol,
-			ol ul,
-			ul ul {
-				margin: 0 1.5em;
-			} 
-		
-		ol {
-			list-style: decimal;
-		}
-			
-		ul {
-			list-style: square;
-		}
-		
-		dl {
-			margin: 24px 0;
-		}
-		
-			dt {
-				font-weight: bold;
-			}
-			
-			dd {
-				margin: 0 1.5em;
-			}
-	/* @end */
-
-
-	/* @group Tables */
-		table {
-			border: 1px solid #ccc;
-			margin: 36px 1.5em 36px;
-			padding: 0;
-		}
-			
-			caption {
-				margin: 12px;
-				font-size: 1.2em;
-				font-weight: bold;
-				line-height: 24px;
-			}
-			
-			th {
-				color: #999;
-				font-weight: bold;
-				padding: 12px 1.5em 10px 1.5em;
-				border-bottom: 1px solid #ccc;
-			}
-			
-			td {
-				padding: 12px 1.5em 11px;
-				border-bottom: 1px solid #ccc;
-			}
-			
-				tr:nth-child(even) {
-					background: #fbfbfb;
-				}
-			
-			/* if your table does not have a footer, add the class `no-footer` */
-			tfoot td,
-			.no-footer tr:last-child td {
-				 border: 0;
-			}
-			
-				tfoot td {
-					font-weight: bold;
-				}
-	/* @end */
-	
-	/* @group Inline Text */
-		a {
-			text-decoration: none;
-		}
-		
-			a:hover {
-				text-decoration: underline;
-			}
-			
-		acronym[title] {
-			border-bottom: 1px dotted #666;
-			cursor: help;
-		}
-		
-		big {
-			font-size: 1.5em;
-			line-height: 0;
-		}
-		
-		cite {
-			color: #999;
-		}	
-		
-			cite:before {
-				content: "– ";
-			}
-		
-		del {
-			color: #ccc;
-		}
-		
-		em {
-			font-style: italic;
-		}
-		
-		hr {
-			margin: 23px 11px 24px 11px;
-			padding: 0;
-			border: 0;
-			border-top: 1px solid #ccc;
-		}
-		
-		kbd {
-			border: 1px solid #ccc;
-			border-radius: 2px;
-			padding: 2px;
-			margin: 2px;
-		}
-		
-		p {
-			margin: 24px 0;
-		}
-		
-		small {
-			font-size: .7em;
-			line-height: 0;
-		}
-		
-		strong {
-			font-weight: bold;
-		}
-		
-		sub,
-		sup {
-			font-size: 75%; 
-			line-height: 0; 
-			position: relative; 
-			vertical-align: baseline;
-		}
-		
-			sub {
-				bottom: -.5em;
-			}
-			
-			sup {
-				top: -.5em;
-			}
-			
-	/* @end */
-	
-	/* @group Forms */
-		form {
-			padding: 0;	
-		}
-		
-		input {
-			display: inline-block;
-			
-			border: 1px solid #ccc;
-			
-			line-height: insherit;
-			margin: 18px 2px 16px;
-			padding: 6px 12px;
-			
-			font: inherit;
-		}
-		
-			::-webkit-input-placeholder {
-				/* fix espresso/safari bug */
-			}
-			
-		/* colors from http://www.jankoatwarpspeed.com/post/2008/05/22/CSS-Message-Boxes-for-different-message-types.aspx */
-		.error,
-		.info,
-		.success,
-		.warning {
-			border: 1px solid;
-			margin: 2px 0;
-			padding: 10px 1.5em;
-		}
-		
-			.error {
-				background: #FFBABA;
-				color: #D8000C;
-			}
-			
-			.info {
-				background: #bde5f8;
-				color: #00529b;
-			}
-			
-			.success {
-				background: #dff2bf;
-				color: #4F8A10;
-			}
-			
-			.warning {
-				background: #feefb3;
-				color: #9F6000;
-			}
-	/* @end */
-/* @end */
-
-/* @group Main */
-
-/* @end */
-
-@media print  {
-
-	* { 
-		background: transparent !important; 
-		color: black !important; 
-		text-shadow: none !important; 
-		filter:none !important;
-		-ms-filter: none !important; 
-	}
-	
-	a:after {
-		content: " &lt;" attr(href) "&rt;";
-	}
-	
-	abbr:after {
-		content: " (" attr(title) ")";
-	}
-	
-	#site-nav {
-		display: none;
-	}
-
-}
