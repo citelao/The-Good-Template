@@ -2,11 +2,12 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
+del, dfn, em, font, img, input, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -45,6 +46,7 @@ caption, th, td {
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: "";
+	display: none;
 }
 blockquote, q {
 	quotes: "" "";
@@ -52,8 +54,12 @@ blockquote, q {
 /* @end */
 
 /* @group Typography */
+
+@base-font: 16px;
+@line-height: @base-font * 1.3125;
+
 body {
-	font: 16px/21px Arial, sans-serif;
+	font: @base-font ~"/" @line-height Arial, sans-serif;
 	margin: 20px auto;
 }
 
@@ -61,43 +67,75 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
+h7,
 p {
 	padding-bottom: 21px;
 }
 
+/* @group Headers */
+
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6,
+h7 {
 	font-weight: bold;
 }
 
 h1 {
+	font-size: 60px;
+	line-height: 63px;
+	padding-top: 6px;
+	margin-bottom: -6px;
+}
+
+h2 {
 	font-size: 40px;
 	line-height: 42px;
 	padding-top: 2px;
 	margin-bottom: -2px;
 }
 
-h2 {
+h3 {
 	font-size: 30px;
 	line-height: 42px;
 	padding-top: 6px;
 	margin-bottom: -6px;
 }
 
-h3 {
-	font-size: 24px;
-	line-height: 42px;
-	padding-top: 8px;
-	margin-bottom: -8px;
-}
-
 h4 {
 	font-size: 18px;
-	line-height: 21px;
 }
+
+/* @end */
+
+blockquote {
+	text-indent: 21px;
+	margin-left: -11px;
+	padding-left: 21px;
+	border-left: 10px solid #999;
+}
+
+p {
+	text-indent: 21px;
+}
+
 /* @end  */
+
+/* @group Form */
+
+input {
+	border: 1px solid #333;
+	margin: -4px -4px 17px;
+	padding: 4px;
+}
+
+
+/* @end */
 
 /* @group Layout */
 
@@ -108,9 +146,8 @@ body {
 	
 	header,
 	section {
-		box-sizing: border-box;
 		width: 100%;
-		padding: 0 10px 21px;
+		padding: 0 10px;
 	}
 	
 	nav {
@@ -160,5 +197,9 @@ body {
 /* @group Debug */
 .debug body {
 	background: url('../img/debug/Baseline.png');
+}
+
+.debug input {
+	background: rgba(255, 255, 255, .5);
 }
 /* @end */
