@@ -1,7 +1,7 @@
 /* TEAM */
 Web Designer: Ben Stolovitz
 Site: ben.stolovitz.com/
-Twitter: @acolite246
+Twitter: @citelao
 Location: GA, USA
 
 /* THANKS */
@@ -9,8 +9,8 @@ Location: GA, USA
 
 /* SITE */
 Last update: YYYY/MM/DD
-Standards: HTML5, CSS3, PHP5
-Components: Modernizr, jQuery, Google Analytics, Wordpress
+Standards: HTML5, CSS3
+Components: Modernizr, jQuery, Google Analytics
 Software: Espresso, 
                                     
                                -o/-                       

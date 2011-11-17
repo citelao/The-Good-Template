@@ -26,8 +26,9 @@ works the way I want it.
 Not really. I have used so much as inspiration and tried to
 credit it when I can, but just in case: 
 [HTML5Boilerplate](https://github.com/h5bp/html5-boilerplate),
-[Baseline.css](http://baselinecss.com/), and
-[Golden Grid System](https://github.com/jonikorpi/Frameless/blob/master/frameless.less).
+[Baseline.css](http://baselinecss.com/),
+[Frameless Grids](https://github.com/jonikorpi/Frameless/blob/master/frameless.less), and
+[Skeleton](https://github.com/dhgamache/Skeleton).
 
 Besides, since I plan on using this as the basis for *all*
 my design projects, I hope its as good as possible.

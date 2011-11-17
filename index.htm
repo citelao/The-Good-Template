@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html class="debug no-js" lang="en-US">
+<html class="n-debug no-js" lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
@@ -36,41 +36,163 @@
 		</header>
 		<nav id="site-nav">
 			<ul>
-				<li><a href="">nav 1</a></li>
-				<li><a href="">nav 2</a></li>
-				<li><a href="">nav 3</a></li>
+				<li><a href="#">nav 1</a></li>
+				<li><a href="#">nav 2</a></li>
+				<li><a href="#">nav 3</a></li>
 			</ul>
 		</nav>
-		<div id="main" role="main">
-			<section id="semantic" class="960half">
-				<h3>Typography.</h3>
-				<h4>Baselines.</h4>
-				<p>Scrumptious baselines for everything.</p>
-				<p>Double rainbow.</p>
+		<div id="main" role="main">			
+			<section id="what">
+				<h3>What is The Good Template?</h3>
+				<p>
+					<strong>The Good Template</strong> is a responsive
+					web design framework designed in 
+					<a href="http://lesscss.org">LESS</a>. It attempts to
+					quickly lay out helpful text baselines, form styles,
+					nifty features, and a simple fixed, responsive, grid.
+				</p>
 				
-				<input type="text" />
-				<input type="button" value="Click" />
+				<h4>Features.</h4>
 				
-				<blockquote>
-					Quoting. is. sick. It's not just for hippies anymore. 
-					Well, actually it is. Shhh.	Because all web designers 
-					are hippies.
-				</blockquote>
+				<ul>
+					<li>Awesome <span class="tooltip" title="Textual">text</span> baseline.</li>
+					<li>Stupendous responsive grid.</li>
+					<li>Grand form styling.
+						<ol>
+							<li>Validation!</li>
+							<li>Selects!</li>
+						</ol>
+					</li>
+					<li>Strong <acronym title="HyperText Markup Language 5">HTML5</acronym> templates.</li>
+					<li>Crazy LESS mixins.</li>
+				</ul>
+			</section>
+						
+			<section>
+				<h3>Why does The Good Template exist?</h3>
+				<p>
+					Yes, there are tons of templates, but I figured I'd try 
+					programming my own. It has what <em>I</em> want. Nothing
+					more. Like <code>kbd</code> styling: <kbd>⌘</kbd> <kbd>+</kbd>;
+					subscripts: O<sub>2</sub><sup>2+</sup>; <big>big stuff</big>,
+					<small>small stuff</small>, &amp; <del>outdated stuff</del>
+					<ins>current stuff</ins>.
+				</p>
+				
+				<h4>Compared to other templates:</h4>
+				
+				<!-- tables
+						.hasfooter - has a footer
+			 	-->
+				
+				<table summary="" class="hasfooter" cellspacing="0">
+					<caption>
+						Template Comparison
+					</caption>
+			
+					<thead>
+						<tr>
+							<th class="hidden">Feature</th>
+							<th>The Good Template</th>
+							<th>HTML5Boilerplate</th>
+							<th>Bootstrap.css</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+					      	<td class="hidden">Feature</td>
+							<td>The Good Template</td>
+							<td>HTML5Boilerplate</td>
+							<td>Bootstrap.css</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>Text Baseline</td>
+							<td>Yes</td>
+							<td>No</td>
+							<td>No</td>
+						</tr>
+						
+						<tr>
+							<td>Gruber's Expertise</td>
+							<td>No</td>
+							<td>Yes</td>
+							<td>No</td>
+						</tr>
+						
+						<tr>
+							<td>What I want</td>
+							<td>Yes</td>
+							<td>No</td>
+							<td>No</td>
+						</tr>
+						
+						<tr>
+							<td>What you want</td>
+							<td>No</td>
+							<td>Yes</td>
+							<td>Yes</td>
+						</tr>
+				      </tbody>
+			    </table>
+			    
+<pre class="brush: php"><code>&lt;!-- All tables must have cellspacing="0" -->
+&lt;!-- Tables with a footer *must* have the class .hasfooter -->
+&lt;table class="hasfooter">
+  &lt;tfoot>
+    &lt;tr>
+      &lt;td>Price&lt;/td>
+      &lt;td>$55.00&lt;/td>
+    &lt;/tr>
+  &lt;/tfoot>
+&lt;/table>
+</code></pre>
 			</section>
 			
-			<section id="nott" class="600half">
-				<h3>Semanticism.</h3>
-				<p>
-					It's not just for hippies anymore. Well, actually it is. Shhh.
-					Because all web designers are hippies.
-				</p>
-				<p>Woah. Easy on the awesome, brah.</p>
+			<section>
+				<h3>Buttons!</h3>
 				
-				<h4>Has anyone ever used an H4?</h4>
+				<a href="javascript:void(0)" class="button">Submit</a>
+				<a href="">Cancel</a>
 				
-				<blockquote>
-					Quoting. is. sick.
-				</blockquote>
+				<h3>Terms</h3>
+				
+				<dl>
+				      <dt>Definition Term</dt>
+				
+				      <dd>Definition data. It's just something I threw together. In the
+				      beginning was the word. And the word wrapped. I'll be looking soon for
+				      opportunities to style this text. In the meantime it will do merely to
+				      occupy space.</dd>
+				      
+				      <dt>Definition Term</dt>
+				      
+				        <dd>Definition data. It's just something I threw together. In the
+				        beginning was the word. And the word wrapped. I'll be looking soon for
+				        opportunities to style this text. In the meantime it will do merely to
+				        occupy space.</dd>
+				    </dl>
+			</section>
+						    
+			<section id="contact">
+				<h3>Contact.</h3>
+				<!--<div class="box error">This is an error.</div>
+				<div class="box info">This is information.</div>
+				<div class="note success">This is success.</div>
+				<div class="note warning">This is a warning.</div>
+				-->
+				
+				<form action="javascript:void(0)">
+					<input type="text" placeholder="name"/><br />
+					<input type="text" placeholder="email" /> <span class="note">(so I can spam you.)</span> <br />
+					<textarea name="" id="" placeholder="you are a brilliant man" cols="30" rows="10"></textarea><br />
+					fsd <br />
+					<input type="submit" value="Mail &raquo;" class="button" onclick="javascript:void(0)" />
+					<a href="javascript:void(0)">Cancel</a>
+				</form>
+				
+				<address>My Address</address>
 			</section>
 		</div>
 				<footer>
@@ -110,269 +232,3 @@
 			</script>
 		</body>
 		</html>
-		
-		<!--
-			
-		    <p>You probably haven't heard of them PBR twee banh mi squid +1. Duis put a bird on it art party, hoodie blog id incididunt veniam locavore. <strong>Laborum skateboard</strong> anim put a bird on it. Magna lo-fi high life, culpa jean shorts before they sold out terry richardson keytar laborum tumblr quis beard labore yr. Tumblr fap magna, raw denim terry richardson portland shoreditch consectetur pitchfork freegan. Vinyl vice ex <em>aesthetic</em>, <em>brooklyn cliche</em> ullamco tumblr mcsweeney's non. Brooklyn squid voluptate ad, quis assumenda synth dolore adipisicing nihil deserunt banksy +1 lomo.</p>
-		    
-		    <p style="float: right; width: 40px; padding: 0 20px 0 0;">Scenester <a href="">tattooed aute bicycle</a> rights, carles butcher banksy vinyl american apparel tempor williamsburg fixie accusamus 8-bit. Laborum sapiente qui keytar. Aesthetic williamsburg letterpress gluten-free sapiente. Mcsweeney's squid nulla organic nesciunt. Velit duis williamsburg wolf, nostrud fixie high life enim fap occaecat id irony qui est. Occaecat ex fugiat artisan mollit, whatever skateboard sartorial duis consectetur fanny pack tumblr leggings vegan wolf. American apparel photo booth proident, williamsburg aesthetic <a href="">brooklyn</a> art party gluten-free sartorial ut put a bird on it you probably haven't heard of them.Scenester <a href="">tattooed aute bicycle</a> rights, carles butcher banksy vinyl american apparel tempor williamsburg fixie accusamus 8-bit. Laborum sapiente qui keytar. Aesthetic williamsburg letterpress gluten-free sapiente. Mcsweeney's squid nulla organic nesciunt. Velit duis williamsburg wolf, nostrud fixie high life enim fap occaecat id irony qui est. Occaecat ex fugiat artisan mollit, whatever skateboard sartorial duis consectetur fanny pack tumblr leggings vegan wolf. American apparel photo booth proident, williamsburg aesthetic <a href="">brooklyn</a> art party gluten-free sartorial ut put a bird on it you probably haven't heard of them.</p>
-		
-		    <h2>Twee Quis Single-Origin / Header 2</h2>
-		
-		    <p>Velit yr irure, letterpress etsy qui sapiente art party id keffiyeh dolor cliche food truck. Marfa quis shoreditch helvetica lo-fi nesciunt carles tempor elit dolore. Occaecat incididunt sustainable, bicycle rights cliche vinyl blog aute. Ea iphone nesciunt vegan dolor. Carles aliquip dreamcatcher, vero letterpress +1 3 wolf moon culpa anim aute cillum chambray. Farm-to-table magna craft beer master cleanse sunt pitchfork. Wayfarers odio aesthetic you probably haven't heard of them, adipisicing proident organic lomo esse etsy +1 sartorial fugiat.</p>
-		    
-		    <blockquote>
-		    <p>Ullamco magna fixie carles wolf. Fanny pack fugiat next level, culpa williamsburg vinyl sint portland minim nisi irure sartorial laboris viral tattooed. Laborum +1 messenger bag, leggings qui cupidatat letterpress scenester irony. Bicycle rights non cred, aliquip fanny pack biodiesel aliqua. Excepteur high life id brunch four loko fixie, officia mollit et. Marfa farm-to-table delectus ethical nulla artisan assumenda vegan cred, skateboard fanny pack laboris mlkshk quis. Tumblr odio adipisicing food truck fap.</p>
-		    
-		    <p><cite>Hipster Ipsum</cite></p>
-		    </blockquote>
-		    
-		    <p>Nostrud mcsweeney's mollit, anim aesthetic wes anderson tattooed next level skateboard commodo proident eu aute delectus. 8-bit voluptate nostrud, dolore veniam irure wolf master cleanse marfa laboris portland. Yr ethical helvetica, craft beer Austin elit pitchfork qui single-origin coffee lo-fi four loko nisi sustainable. Occaecat delectus dolore, fanny pack qui thundercats pariatur put a bird on it lo-fi trust fund 8-bit ut nostrud. Banh mi Austin etsy sustainable. Nulla do esse, consectetur shoreditch cosby sweater enim adipisicing fugiat master cleanse sint helvetica trust fund biodiesel. Placeat pariatur PBR, put a bird on it excepteur Austin pitchfork.</p>
-		
-		    <h3>Some <em>Actual</em> Content (Header 3)</h3>
-		
-		    <p>What's the difference between H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub>? What's the value of 196<sup>2</sup>? School teaches us all of this, yet too often we disregard this amazing institution as stupid. Not long ago, no one had school– some people walked five or even six miles to get to school <strong>every day</strong>. Today, school is 'stupid.' OK, let's fix that.</p>
-		
-		    <h4>Heading 4: the final insult</h4>
-		
-		    <p>Houston, we have a problem. I can't get this working!</p>
-		    
-		    <p>No problem! Just press <kbd>⌘</kbd><kbd>a</kbd>, then <kbd>delete</kbd></p>
-		
-		    <h5>Heading 5 I Am said Sam. In the Mosaic browser default stylesheet, I'm
-		    one step smaller than normal paragraph text. In the Core Style Project, I
-		    am still one step larger.</h5>
-		
-		    <p>This is a paragraph. It's just something I threw together. In the
-		    beginning was the word. And the<kbd>⌘</kbd><kbd>+</kbd> word wrapped. I'll be looking soon for
-		    opportunities to style this text. In the meantime it will do merely to
-		    occupy space.</p>
-		
-		    <h6>Heading 6, extended to produce a line break, so as to be able to
-		    determine line-height. This ought to do it, what? In the Mosaic browser
-		    default stylesheet, I'm two steps smaller than normal paragraph text
-		    (perverse!). In the Core Style Project, I am the same size.</h6>
-		
-		    <p>This sentence contains <em>an emphasized phrase</em>. This sentence
-		    contains <strong>a strongly emphasized</strong> phrase. This sentence
-		    contains <em>a strongly emphasized bit <strong>within</strong> an
-		    emphasized phrase</em>.</p>
-		
-		    <p><big>This is big.</big> <small>This is small.</small> <samp>This is
-		    SAMP.</samp> H<sub>2</sub>O<sup>2</sup> <strike>This is strike.</strike> <tt>This is tt.</tt> <ins>This is INS</ins>. 				<del>This is DEL</del>. This sentence contains an acronym:
-		    <acronym title="North Atlantic Treaty Organization">NATO</acronym>. In the beginning was the word. And the word
-		    wrapped. I'll be looking soon for opportunities to style this text. In the
-		    meantime it will do merely to occupy space.</p>
-		
-		    <h2>Heading 2</h2>
-		
-		    <p>This is a paragraph. It's just something I threw together. In the
-		    beginning was the word. And the word wrapped. I'll be looking soon for
-		    opportunities to style this text. In the meantime it will do merely to
-		    occupy space.</p>
-		        <p>This is a paragraph. It's just something I threw together. In the
-		        beginning was the word. And the word wrapped. I'll be looking soon for
-		        opportunities to style this text. In the meantime it will do merely to
-		        occupy space.</p>
-		
-		    <blockquote><p>
-		      This is a blockquote. It's just something I threw together. In the
-		      beginning was the word. And the word wrapped. I'll be looking soon for
-		      opportunities to style this text. In the meantime it will do merely to
-		      occupy space. I'll keep this up a bit longer and then move on. I've read
-		      more substantial greeting cards than this.</p>
-		      <p><cite><a href="">The page</a> I got it from</cite></p>
-		    </blockquote>
-		    
-<!--		    <p>Note to self: fix blockquote+header line-height bug</p>--*>
-		
-		    <h3>Heading 3</h3>
-		
-		    <p>This is a paragraph. It's just something I threw together. This sentence
-		    contains <a href="http://www.w3.org/">a link</a> to W3C, which you have
-		    probably visited. This sentence contains a link to <a href=
-		    "http://www.foo.net/">someplace else</a>. This is <a href=
-		    "http://www.unpronounceable.com/" class="offsite">an offsite link</a>. In
-		    the beginning was the word. And the word wrapped. I'll be looking soon for
-		    opportunities to style this text. In the meantime it will do merely to
-		    occupy space.</p>
-		
-		    <ol>
-		      <li>this is an ordered list item. It's just something I threw together.
-		      In the beginning was the word. And the word wrapped. I'll be looking soon
-		      for opportunities to style this text. In the meantime it will do merely
-		      to occupy space.</li>
-		
-		      <li>
-		        this is another ordered list item 
-		
-		        <ul>
-		          <li>This is an unordered list within an ordered one.</li>
-		
-		          <li>
-		            This is another unordered list item. 
-		
-		            <ol>
-		              <li>Just to be mean, here's another ordered list - inside the
-		              unordered list.</li>
-		
-		              <li>...and another list item, to fill space.</li>
-		            </ol>
-		          </li>
-		
-		          <li>This is a third item in that unordered list.</li>
-		
-		          <li>This is a fourth.</li>
-		        </ul>
-		      </li>
-		
-		      <li>This is item 3 in the initial ordered list.</li>
-		
-		      <li>This is item 4.</li>
-		    </ol>
-		
-			<h3>Heading 3</h3>
-		
-		    <ol>
-		      <li>
-		        this is an ordered list item. It's just something I threw together. In
-		        the beginning was the word. And the word wrapped. I'll be looking soon
-		        for opportunities to style this text. In the meantime it will do merely
-		        to occupy space. 
-		
-		        <ol>
-		          <li>
-		            Here's another ordered list - inside the ordered list. 
-		
-		            <ol>
-		              <li>Here's yet another ordered list - nested deeper.</li>
-		
-		              <li>...and another list item, to fill space.</li>
-		            </ol>
-		          </li>
-		
-		          <li>...and another list item, to fill space.</li>
-		        </ol>
-		      </li>
-		
-		      <li>this is another ordered list item</li>
-		    </ol>
-		
-		    <p>This is a paragraph. It's just something I threw together. In the
-		    beginning was the word. And the word wrapped. I'll be looking soon for
-		    opportunities to style this text. In the meantime it will do merely to
-		    occupy space.</p>
-		
-		    <h4>Heading 4</h4>
-		
-		    <p>This is a paragraph. It's just something I threw together. In the
-		    beginning was the word. And the word wrapped. I'll be looking soon for
-		    opportunities to style this text. In the meantime it will do merely to
-		    occupy space.</p>
-		
-		    <dl>
-		      <dt>Definition Term</dt>
-		
-		      <dd>Definition data. It's just something I threw together. In the
-		      beginning was the word. And the word wrapped. I'll be looking soon for
-		      opportunities to style this text. In the meantime it will do merely to
-		      occupy space.</dd>
-		      
-		      <dt>Definition Term</dt>
-		      
-	            <dd>Definition data. It's just something I threw together. In the
-	            beginning was the word. And the word wrapped. I'll be looking soon for
-	            opportunities to style this text. In the meantime it will do merely to
-	            occupy space.</dd>
-		    </dl>
-		
-		    <table summary="">
-		      <caption>
-		        Table caption
-		      </caption>
-		
-			<thead>
-		      <tr>
-		        <th>Table Head</th>
-		        <th>Table Head</th>
-		      </tr>
-			</thead>
-			<tfoot>
-				<tr>
-				  <td>Table Foot</td>
-				    <td>Table Foot</td>
-				</tr>
-			</tfoot>
-			<tbody>
-		      <tr>
-		        <td>Cell contents.</td>
-		          <td>Cell contents.</td>
-		      </tr>
-		      
-		      <tr>
-		        <td>Cell contents.</td>
-		          <td>Cell contents. How wide?</td>
-		      </tr>
-		      </tbody>
-		    </table>
-		
-		    <p>This is a paragraph. It's just something I threw together. In the
-		    beginning was the word. And the word wrapped. I'll be looking soon for
-		    opportunities to style this text. In the meantime it will do merely to
-		    occupy space.</p>
-		
-		    <h5>Heading 5</h5>
-		    
-		    <p>This is a paragraph. It's just something I threw together. In the
-		    beginning was the word. And the word wrapped. I'll be looking soon for
-		    opportunities to style this text. In the meantime it will do merely to
-		    occupy space.</p>
-		    
-		    <form action="">
-		    	<div class="warning">All fields required</div>
-		    	<p>Scenester <a href="">tattooed aute bicycle</a> rights, carles butcher banksy vinyl american apparel tempor williamsburg fixie accusamus 8-bit. Laborum sapiente qui keytar. Aesthetic williamsburg letterpress gluten-free sapiente. Mcsweeney's squid nulla organic nesciunt. Velit duis williamsburg wolf, nostrud fixie high life enim fap occaecat id irony qui est. Occaecat ex fugiat artisan mollit, whatever skateboard sartorial duis consectetur fanny pack tumblr leggings vegan wolf. American apparel photo booth proident, williamsburg aesthetic <a href="">brooklyn</a> art party gluten-free sartorial ut put a bird on it you probably haven't heard of them.</p>
-		    	<fieldset>
-		    		<legend>Comment</legend>
-		    		
-		    		<input type="text" placeholder="First Name" /> <input type="text" placeholder="Last Name" value="red"/><br />
-		    		
-		    		<input type="email" placeholder="Email" /><input type="submit" value="Submit &rarr;" />
-		    		
-		    	</fieldset>
-		    </form>
-		    
-		    
-		    <p>Nostrud mcsweeney's mollit, anim aesthetic wes anderson tattooed next level skateboard commodo proident eu aute delectus. 8-bit voluptate nostrud, dolore veniam irure wolf master cleanse marfa laboris portland. Yr ethical helvetica, craft beer Austin elit pitchfork qui single-origin coffee lo-fi four loko <span class="warning">nisi</span> sustainable. Occaecat delectus dolore, fanny pack qui thundercats pariatur put a bird on it lo-fi trust fund 8-bit ut nostrud. Banh mi Austin etsy sustainable. Nulla do esse, consectetur shoreditch cosby sweater enim adipisicing fugiat master cleanse sint helvetica trust fund biodiesel. Placeat pariatur PBR, put a bird on it excepteur Austin pitchfork.</p>
-		    
-		    <form action="">
-		    	<p>test</p>
-		    </form>
-		    
-		    <p>Nostrud mcsweeney's mollit, anim aesthetic wes anderson tattooed next level skateboard commodo proident eu aute delectus. 8-bit voluptate nostrud, dolore veniam irure wolf master cleanse marfa laboris portland. Yr ethical helvetica, craft beer Austin elit pitchfork qui single-origin coffee lo-fi four loko nisi sustainable. Occaecat delectus dolore, fanny pack qui thundercats pariatur put a bird on it lo-fi trust fund 8-bit ut nostrud. Banh mi Austin etsy sustainable. Nulla do esse, consectetur shoreditch cosby sweater enim adipisicing fugiat master cleanse sint helvetica trust fund biodiesel. Placeat pariatur PBR, put a bird on it excepteur Austin pitchfork.</p>
-		    
-		    <hr>
-		
-		    <div>
-		      This is a div preceded by a horizontal rule, which might be hidden. It's
-		      just something I threw together. In the beginning was the word. And the
-		      word wrapped. I'll be looking soon for opportunities to style this text.
-		      In the meantime it will do merely to occupy space.
-		    </div>
-		
-		    <div>
-		      <p>This is a paragraph within a div. It's just something I threw
-		      together. In the beginning was the word. And the word wrapped. I'll be
-		      looking soon for opportunities to style this text. In the meantime it
-		      will do merely to occupy space.</p>
-		    </div>
-		
-			<div class="error">This is an error.</div>
-			<div class="info">This is information.</div>
-			<div class="success">This is success.</div>
-			<div class="warning">This is a warning.</div>
-		
-			<p>Scenester <a href="">tattooed aute bicycle</a> rights, carles butcher banksy vinyl american apparel tempor williamsburg fixie accusamus 8-bit. Laborum sapiente qui keytar. Aesthetic williamsburg letterpress gluten-free sapiente. Mcsweeney's squid nulla organic nesciunt. Velit duis williamsburg wolf, nostrud fixie high life enim fap occaecat id irony qui est. Occaecat ex fugiat artisan mollit, whatever skateboard sartorial duis consectetur fanny pack tumblr leggings vegan wolf. American apparel photo booth proident, williamsburg aesthetic <a href="">brooklyn</a> art party gluten-free sartorial ut put a bird on it you probably haven't heard of them.</p>
-		
-		    <address>
-		      This is an Address.
-		    </address>-->
