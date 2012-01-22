@@ -399,15 +399,24 @@ textarea {
 		vertical-align: text-top;
 	}
 
-/* @group Labels */
-label {
+/* @group Inlined Labels */
+.inlined label {
 	color: #666;
+	opacity: 0;
 	position: absolute;
+	right: 20px;
+	-webkit-transition: all 0.2s ease-in-out;
+}
+
+.inlined.focus label {
+	opacity: 0.5;
 	right: 13px;
-	
-	.focus {
-		color: red;
-	}
+	-webkit-transition: opacity 0.05s ease-in-out;
+}
+
+.inlined.has-text label {
+	opacity: 0.1;
+	right: 13px;
 }
 
 ::-webkit-input-placeholder {
