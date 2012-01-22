@@ -27,28 +27,34 @@ header, section {
 :focus {
 	outline: 0;
 }
+
 body {
-	line-height: 1;
+	line-height: 1.0;
 	color: #333;
 	background: #fff;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 /* tables still need 'cellspacing="0"' in the markup */
 table {
 	border-collapse: separate;
 	border-spacing: 0;
 }
+
 caption, th, td {
 	text-align: left;
 	font-weight: normal;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: "";
 	display: none;
 }
+
 blockquote, q {
 	quotes: "" "";
 }
@@ -56,32 +62,33 @@ blockquote, q {
 
 /* @group Typography */
 
-/* The sad part about typography is that 99% of this needs to change when you change the font. Run the site in debug mode if you change the font and play around with the numbers. */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
 
-@base-font: 16px;
-@line-height: @base-font * 1.3125; //21px
+/* We want each line to be 21px, font size 16 */
+
+@base-font: 1em;
+@line-height: 1.3125;
+@hope-pixel-height: 16;
 
 // Arbitrary.
-@h1-size: @base-font * 3.75; //60px
-@h2-size: @base-font * 2.5; //40px
-@h3-size: @base-font * 1.875; //30px
-@h4-size: @base-font * 1.125; //18px
+@h1-size: 3.75; //60px
+@h2-size: 2.5; //40px
+@h3-size: 1.25; //20px
+@h4-size: 1; //16px
+
 
 body {
 	font: @base-font ~"/" @line-height Arial, sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
 h5,
 h6,
 h7,
 ol,
 p,
+pre,
 ul {
-	padding-bottom: @line-height;
+	padding-bottom: @line-height * @base-font;
 }
 
 /* @group Headers */
@@ -97,28 +104,27 @@ h7 {
 }
 
 h1 {
-	font-size: @h1-size; //60px
-	line-height: @line-height * 3; // Must be a multiple of 16, picked nearest to @h1-size
-	padding-top: 6px; /* completely arbitrary */
-	margin-bottom: -6px;
-}
+	font-size: @h1-size * @base-font; //3.75em = 60px
+	line-height: ceil(@h1-size / @line-height)  * @line-height / @h1-size; //1.05 = 63px
+	padding-bottom: @base-font * @line-height / @h1-size; //.035em = 21px
+	}
 
 h2 {
-	font-size: @h2-size; //40px
-	line-height: @line-height * 2; //42px
-	padding-top: 2px;
-	margin-bottom: -2px;
+	font-size: @h2-size * @base-font; //2.5em = 40px
+	line-height: ceil(@h2-size / @line-height)  * @line-height / @h2-size; //1.05 = 42px
+	padding-bottom: @base-font * @line-height / @h2-size; //.0525 = 21px
 }
 
 h3 {
-	font-size: @h3-size; //30px
-	line-height: @line-height * 2; //42px
-	padding-top: 6px;
-	margin-bottom: -6px;
+	font-size: @h3-size * @base-font; //1.25em = 20px
+	line-height: ceil(@h3-size / @line-height)  * @line-height / @h3-size; //1.05 = 21px
+	padding-bottom: @base-font * @line-height / @h3-size; //1.05em = 21px;
 }
 
 h4 {
-	font-size: @h4-size; //18px
+	font-size: @h4-size * @base-font; //1em = 16px
+	line-height: ceil(@h4-size / @line-height)  * @line-height / @h4-size; //1.3125 = 21px
+	padding-bottom: @base-font * @line-height / @h4-size; //1.3125em = 21px
 }
 
 /* @end */
@@ -173,29 +179,30 @@ blockquote {
 }
 
 code {
-	background-color: #e7cb9a;
 	border-radius: 2px;
-	font-family: "Menlo", monospace;
+	font-family: "Ubuntu Mono", monospace;
 	margin: -4px 0;
 	padding: 4px;
-	-moz-box-shadow: inset 0 0 1px black;
-	-webkit-box-shadow: inset 0 0 1px black;
-	box-shadow: inset 0 0 1px black;
+	-moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+	background-color: #e7cb9a;
 }
 
 	pre > code {
 		display: block;
-		margin: -4px -4px;
+		margin: 17px 16px -4px -4px;
+		overflow-x: scroll;
 	}
 
 del {
-	opacity: 0.5;
-	-webkit-transition: opacity 0.2s ease-in-out;
+	color: rgba(1.0, 1.0, 1.0, 0.5);
+	-webkit-transition: color 0.2s ease-in-out;
 	
 	&:hover {
-		opacity: 1;
+		color: rgba(1.0, 1.0, 1.0, 1.0);
 		text-decoration: none;
-		-webkit-transition: opacity 0.2s ease-in-out;
+		-webkit-transition: color 0.2s ease-in-out;
 	}
 }
 
@@ -204,10 +211,11 @@ kbd {
 	border-left: 2px outset;
 	border-right: 3px outset;
 	border-bottom: 4px outset;
+	border-radius: 4px;
 }
 
 p {
-	text-indent: 21px;
+	text-indent: @line-height;
 }
 
 sub,
@@ -259,7 +267,7 @@ ul {
 /* @group Table */
 	table {
 		margin: 5px;
-		padding: 6px 5px 5px;
+		padding: 5px 5px 6px;
 /*		border: 1px solid;*/
 	}
 	
@@ -306,12 +314,6 @@ dd {
 /* @end */
 
 /* @group Form */
-.box {
-/*	border: 1px solid #333;*/
-/*	margin: 10px -5px;
-	padding: 10px 5px;*/
-}
-
 @buttonColor: #7979db;
 
 .button {
@@ -340,27 +342,73 @@ dd {
 	
 	&:active {
 		padding-bottom: 7px;
-		margin-bottom: 0px;
+		margin-bottom: 1px;
 		position: relative;
 		top: 1px;
+	}
+	
+	&:focus {
+		//TODO
 	}
 }
 
 form {
 	margin: 0 auto;
+	
+	aside {
+		clear: both;
+		color: #999;
+		display: block;
+		text-align: center;
+		margin: -1px 0 19px -4px;
+	}
+	
+	.secondary {
+		float: right;
+		padding-top: 18px;
+	}
+}
+
+form > ol {
+	list-style: none;
+	
+	/* debug */
+	width: 200px;
+	
+	li {
+		position: relative;
+	}
 }
 
 input,
 textarea {
+	background: none;
 	border: 1px solid #333;
+	border-radius: 2px;
 	margin: -5px 0 16px -4px;
 	padding: 4px;
-	border-radius: 2px;
+	width: 100%;
 }
+
+	input[type=submit] {
+		width: auto;
+	}
 
 	textarea {
 		margin-bottom: 11px;
+		vertical-align: text-top;
 	}
+
+/* @group Labels */
+label {
+	color: #666;
+	position: absolute;
+	right: 13px;
+	
+	.focus {
+		color: red;
+	}
+}
 
 ::-webkit-input-placeholder {
 	vertical-align: bottom;
@@ -369,6 +417,7 @@ textarea {
 :-moz-placeholder  {
 	vertical-align: bottom;
 }
+/* @end */
 /* @end */
 
 /* @group Layout */
@@ -456,7 +505,7 @@ body {
 }
 
 .debug #wrapper {
-	background-color: rgba(91, 111, 219, 0.09);
+	background-color: rgba(169, 177, 224, 0.02);
 }
 
 .debug input,

@@ -34,13 +34,13 @@
 				<h2>A responsive web site framework</h2>
 			</hgroup>
 		</header>
-		<nav id="site-nav">
+		<!--<nav id="site-nav">
 			<ul>
 				<li><a href="#">nav 1</a></li>
 				<li><a href="#">nav 2</a></li>
 				<li><a href="#">nav 3</a></li>
 			</ul>
-		</nav>
+		</nav>-->
 		<div id="main" role="main">			
 			<section id="what">
 				<h3>What is The Good Template?</h3>
@@ -55,7 +55,7 @@
 				<h4>Features.</h4>
 				
 				<ul>
-					<li>Awesome <span class="tooltip" title="Textual">text</span> baseline.</li>
+					<li>Awesome text baseline.</li>
 					<li>Stupendous responsive grid.</li>
 					<li>Grand form styling.
 						<ol>
@@ -74,9 +74,9 @@
 					Yes, there are tons of templates, but I figured I'd try 
 					programming my own. It has what <em>I</em> want. Nothing
 					more. Like <code>kbd</code> styling: <kbd>⌘</kbd> <kbd>+</kbd>;
-					subscripts: O<sub>2</sub><sup>2+</sup>; <big>big stuff</big>,
-					<small>small stuff</small>, &amp; <del>outdated stuff</del>
-					<ins>current stuff</ins>.
+					subscripts and superscripts: O<sub>2</sub><sup>2+</sup>; 
+					<big>big stuff</big>, <small>small stuff</small>, &amp; 
+					<del>outdated stuff</del> <ins>current stuff</ins>. It has <span class="tooltip" title="Important hidden stuff">tooltip</span> syntax that works on <acronym title="Amazing Chronological Reality Observation, Not Your Mother's Stuff">ACRONYMS</acronym>
 				</p>
 				
 				<h4>Compared to other templates:</h4>
@@ -136,7 +136,7 @@
 						</tr>
 				      </tbody>
 			    </table>
-			    
+			    fs
 <pre class="brush: php"><code>&lt;!-- All tables must have cellspacing="0" -->
 &lt;!-- Tables with a footer *must* have the class .hasfooter -->
 &lt;table class="hasfooter">
@@ -148,14 +148,11 @@
   &lt;/tfoot>
 &lt;/table>
 </code></pre>
+
+fs
 			</section>
 			
 			<section>
-				<h3>Buttons!</h3>
-				
-				<a href="javascript:void(0)" class="button">Submit</a>
-				<a href="">Cancel</a>
-				
 				<h3>Terms</h3>
 				
 				<dl>
@@ -184,12 +181,27 @@
 				-->
 				
 				<form action="javascript:void(0)">
-					<input type="text" placeholder="name"/><br />
-					<input type="text" placeholder="email" /> <span class="note">(so I can spam you.)</span> <br />
-					<textarea name="" id="" placeholder="you are a brilliant man" cols="30" rows="10"></textarea><br />
-					fsd <br />
-					<input type="submit" value="Mail &raquo;" class="button" onclick="javascript:void(0)" />
-					<a href="javascript:void(0)">Cancel</a>
+					<ol>
+						<li>
+							<label for="name">name</label>
+							<input type="text" placeholder="name" id="name" />
+						</li>
+						
+						<li>
+							<label for="email">email</label>
+							<input type="text" placeholder="email" id="email" />
+							<aside>(so I can spam you)</aside>
+						</li>
+						
+						<li>
+							<textarea name="" id="" placeholder="you are a brilliant man" cols="30" rows="10"></textarea>
+						</li>
+						
+						<li>
+							<input type="submit" value="Mail" class="button" data-icon="" onclick="javascript:void(0)" />
+							<a class="secondary" href="javascript:void(0)">Cancel</a>
+						</li>
+					</ol>
 				</form>
 				
 				<address>My Address</address>
@@ -230,5 +242,8 @@
 			  s.parentNode.insertBefore(ga, s);
 			 })();
 			</script>
+			
+			<!-- DEBUG -->
+			<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 		</body>
 		</html>

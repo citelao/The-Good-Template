@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
 /* @group Reset */
 html,
 body,
@@ -78,7 +79,7 @@ header, section {
   outline: 0;
 }
 body {
-  line-height: 1;
+  line-height: 1.0;
   color: #333;
   background: #fff;
 }
@@ -106,21 +107,18 @@ blockquote, q {
 }
 /* @end */
 /* @group Typography */
-/* The sad part about typography is that 99% of this needs to change when you change the font. Run the site in debug mode if you change the font and play around with the numbers. */
+/* We want each line to be 21px, font size 16 */
 body {
-  font: 16px / 21px Arial, sans-serif;
+  font: 1em / 1.3125 Arial, sans-serif;
 }
-h1,
-h2,
-h3,
-h4,
 h5,
 h6,
 h7,
 ol,
 p,
+pre,
 ul {
-  padding-bottom: 21px;
+  padding-bottom: 1.3125em;
 }
 /* @group Headers */
 h1,
@@ -133,27 +131,24 @@ h7 {
   font-weight: bold;
 }
 h1 {
-  font-size: 60px;
-  line-height: 63px;
-  padding-top: 6px;
-  /* completely arbitrary */
-
-  margin-bottom: -6px;
+  font-size: 3.75em;
+  line-height: 1.05;
+  padding-bottom: 0.35em;
 }
 h2 {
-  font-size: 40px;
-  line-height: 42px;
-  padding-top: 2px;
-  margin-bottom: -2px;
+  font-size: 2.5em;
+  line-height: 1.05;
+  padding-bottom: 0.525em;
 }
 h3 {
-  font-size: 30px;
-  line-height: 42px;
-  padding-top: 6px;
-  margin-bottom: -6px;
+  font-size: 1.25em;
+  line-height: 1.05;
+  padding-bottom: 1.05em;
 }
 h4 {
-  font-size: 18px;
+  font-size: 1em;
+  line-height: 1.3125;
+  padding-bottom: 1.3125em;
 }
 /* @end */
 a {
@@ -196,36 +191,38 @@ blockquote {
   border-left: 10px solid #999;
 }
 code {
-  background-color: #e7cb9a;
   border-radius: 2px;
-  font-family: "Menlo", monospace;
+  font-family: "Ubuntu Mono", monospace;
   margin: -4px 0;
   padding: 4px;
-  -moz-box-shadow: inset 0 0 1px black;
-  -webkit-box-shadow: inset 0 0 1px black;
-  box-shadow: inset 0 0 1px black;
+  -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+  background-color: #e7cb9a;
 }
 pre > code {
   display: block;
-  margin: -4px -4px;
+  margin: 17px 16px -4px -4px;
+  overflow-x: scroll;
 }
 del {
-  opacity: 0.5;
-  -webkit-transition: opacity 0.2s ease-in-out;
+  color: rgba(1, 1, 1, 0.5);
+  -webkit-transition: color 0.2s ease-in-out;
 }
 del:hover {
-  opacity: 1;
+  color: #010101;
   text-decoration: none;
-  -webkit-transition: opacity 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
 }
 kbd {
   border-top: 2px outset;
   border-left: 2px outset;
   border-right: 3px outset;
   border-bottom: 4px outset;
+  border-radius: 4px;
 }
 p {
-  text-indent: 21px;
+  text-indent: 1.3125;
 }
 sub, sup {
   font-size: 10px;
@@ -263,7 +260,7 @@ ol ol {
 /* @group Table */
 table {
   margin: 5px;
-  padding: 6px 5px 5px;
+  padding: 5px 5px 6px;
   /*		border: 1px solid;*/
 
 }
@@ -300,13 +297,6 @@ dd {
 }
 /* @end */
 /* @group Form */
-.box {
-  /*	border: 1px solid #333;*/
-
-  /*	margin: 10px -5px;
-	padding: 10px 5px;*/
-
-}
 .button {
   background: -moz-linear-gradient(90deg, #6565d6 0%, #7979db 100%) #7979db;
   background: -webkit-gradient(linear, left top, left bottom, from(#7979db), to(#6565d6)) #7979db;
@@ -331,21 +321,56 @@ dd {
 }
 .button:active {
   padding-bottom: 7px;
-  margin-bottom: 0px;
+  margin-bottom: 1px;
   position: relative;
   top: 1px;
 }
 form {
   margin: 0 auto;
 }
+form aside {
+  clear: both;
+  color: #999;
+  display: block;
+  text-align: center;
+  margin: -1px 0 19px -4px;
+}
+form .secondary {
+  float: right;
+  padding-top: 18px;
+}
+form > ol {
+  list-style: none;
+  /* debug */
+
+  width: 200px;
+}
+form > ol li {
+  position: relative;
+}
 input, textarea {
+  background: none;
   border: 1px solid #333;
+  border-radius: 2px;
   margin: -5px 0 16px -4px;
   padding: 4px;
-  border-radius: 2px;
+  width: 100%;
+}
+input[type=submit] {
+  width: auto;
 }
 textarea {
   margin-bottom: 11px;
+  vertical-align: text-top;
+}
+/* @group Labels */
+label {
+  color: #666;
+  position: absolute;
+  right: 13px;
+}
+label .focus {
+  color: red;
 }
 ::-webkit-input-placeholder {
   vertical-align: bottom;
@@ -353,6 +378,7 @@ textarea {
 :-moz-placeholder {
   vertical-align: bottom;
 }
+/* @end */
 /* @end */
 /* @group Layout */
 /* @group Clearfix */
@@ -419,7 +445,7 @@ footer {
   background: url('../img/debug/Baseline.png');
 }
 .debug #wrapper {
-  background-color: rgba(91, 111, 219, 0.09);
+  background-color: rgba(169, 177, 224, 0.02);
 }
 .debug input, .debug textarea {
   background-color: rgba(100, 100, 100, 0.2);
