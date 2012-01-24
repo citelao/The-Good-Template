@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html class="ndebug no-js" lang="en-US">
+<html class="ddebug no-js" lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
@@ -17,6 +17,7 @@
 	
 	<link rel="author" href="humans.txt" />
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/solarized_dark.min.css">	
 	
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/mobile/apple-touch-icon-large.png">
@@ -73,12 +74,11 @@
 				<p>
 					Yes, there are tons of templates, but I figured I'd try 
 					programming my own. It has what <em>I</em> want. Nothing
-					more. Like <code>kbd</code> styling: <kbd>⌘</kbd> <kbd>+</kbd>;
+					more. Like <code class="html">&lt;kbd></code> styling: <kbd>⌘</kbd> <kbd>+</kbd>;
 					subscripts and superscripts: O<sub>2</sub><sup>2+</sup>; 
 					<big>big stuff</big>, <small>small stuff</small>, &amp; 
 					<del>outdated stuff</del> <ins>current stuff</ins>. It has <span class="tooltip" title="Important hidden stuff">tooltip</span> syntax that works on <acronym title="Amazing Chronological Reality Observation, Not Your Mother's Stuff">ACRONYMS</acronym>
 				</p>
-				
 				<h4>Compared to other templates:</h4>
 				
 				<!-- tables
@@ -136,8 +136,7 @@
 						</tr>
 				      </tbody>
 			    </table>
-			    fs
-<pre class="brush: php"><code>&lt;!-- All tables must have cellspacing="0" -->
+<pre><code class="html">&lt;!-- All tables must have cellspacing="0" -->
 &lt;!-- Tables with a footer *must* have the class .hasfooter -->
 &lt;table class="hasfooter">
   &lt;tfoot>
@@ -148,28 +147,26 @@
   &lt;/tfoot>
 &lt;/table>
 </code></pre>
-
-fs
 			</section>
 			
 			<section>
 				<h3>Terms</h3>
 				
 				<dl>
-				      <dt>Definition Term</dt>
-				
-				      <dd>Definition data. It's just something I threw together. In the
-				      beginning was the word. And the word wrapped. I'll be looking soon for
-				      opportunities to style this text. In the meantime it will do merely to
-				      occupy space.</dd>
-				      
-				      <dt>Definition Term</dt>
-				      
-				        <dd>Definition data. It's just something I threw together. In the
-				        beginning was the word. And the word wrapped. I'll be looking soon for
-				        opportunities to style this text. In the meantime it will do merely to
-				        occupy space.</dd>
-				    </dl>
+					<dt>Definition Term</dt>
+					
+					<dd>Definition data. It's just something I threw together. In the
+					beginning was the word. And the word wrapped. I'll be looking soon for
+					opportunities to style this text. In the meantime it will do merely to
+					occupy space.</dd>
+
+					<dt>Definition Term</dt>
+			      
+			        <dd>Definition data. It's just something I threw together. In the
+			        beginning was the word. And the word wrapped. I'll be looking soon for
+			        opportunities to style this text. In the meantime it will do merely to
+			        occupy space.</dd>
+			    </dl>
 			</section>
 						    
 			<section id="contact">
@@ -182,19 +179,33 @@ fs
 				
 				<form action="javascript:void(0)">
 					<ol>
-						<li class="inlined">
-							<label for="name">name</label>
-							<input type="text" placeholder="name" id="name" />
+						<li>
+							<label for="name">name:</label>
+							<label for="name" class="inlined">name</label>
+							<input type="text" placeholder="John Smith" id="name" />
 						</li>
 						
-						<li class="inlined">
-							<label for="email">email</label>
-							<input type="text" placeholder="email" id="email" />
+						<li>
+							<label for="name">email:</label>
+							<label for="email" class="inlined">email</label>
+							<input type="text" placeholder="john@smith.com" id="email" />
 							<aside>(so I can spam you)</aside>
 						</li>
 						
-						<li class="inlined">
-							<textarea name="" id="" placeholder="you are a brilliant man" cols="30" rows="10"></textarea>
+						<li>
+							<label for="tone">regarding:</label>
+							<select name="tone" id="tone">
+								<option value="" disabled>Choose your primary emotion.</option>
+								<option value="hate">Hate</option>
+								<option value="love">Love</option>
+							</select>
+							<aside>Still have to style <code>&lt;select></code></aside>
+						</li>
+						
+						<li>
+							<label for="name">message:</label>
+							<label for="email" class="inlined">message</label>
+							<textarea name="" id="" placeholder="I love/hate your site!" cols="30" rows="10"></textarea>
 						</li>
 						
 						<li>
@@ -204,7 +215,10 @@ fs
 					</ol>
 				</form>
 				
-				<address>My Address</address>
+				<address>
+					123 Easy Rd. <br />
+					Somewhere, ST 12345 
+				</address>
 			</section>
 		</div>
 				<footer>
@@ -212,7 +226,9 @@ fs
 				</footer>
 			</div>
 			
+			<!-- TODO FIX -->
 			<script src="https//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+			<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
 			
 			<script>
 				window.jQuery || document.write('<script src="js/jquery-1.5.2.min.js">\x3C/script>')

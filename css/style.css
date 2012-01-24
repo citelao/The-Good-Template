@@ -149,6 +149,7 @@ h4 {
   font-size: 1em;
   line-height: 1.3125;
   padding-bottom: 1.3125em;
+  font-variant: small-caps;
 }
 /* @end */
 a {
@@ -161,9 +162,13 @@ a:active {
   position: relative;
   top: 1px;
 }
+a:focus {
+  outline: dotted;
+}
 /* @group Tooltips */
 .tooltip {
   border-bottom: 1px dotted;
+  cursor: pointer;
 }
 .tooltip:hover:after, acronym:hover:after {
   content: attr(title);
@@ -192,13 +197,14 @@ blockquote {
 }
 code {
   border-radius: 2px;
+  color: #93a1a1;
   font-family: "Ubuntu Mono", monospace;
   margin: -4px 0;
   padding: 4px;
   -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
-  background-color: #e7cb9a;
+  background-color: #002b36;
 }
 pre > code {
   display: block;
@@ -236,8 +242,8 @@ sup {
   vertical-align: super;
 }
 small {
-  font-size: 10px;
-  line-height: 10px;
+  font-size: 0.75em;
+  line-height: 0.75em;
 }
 /* @group Lists */
 ol, ul {
@@ -332,8 +338,11 @@ form aside {
   clear: both;
   color: #999;
   display: block;
+  font-size: 0.75em;
+  line-height: 0.75em;
+  font-variant: small-caps;
+  margin: 2px 0 21px -4px;
   text-align: center;
-  margin: -1px 0 19px -4px;
 }
 form .secondary {
   float: right;
@@ -343,12 +352,12 @@ form > ol {
   list-style: none;
   /* debug */
 
-  width: 200px;
+  width: 300px;
 }
 form > ol li {
   position: relative;
 }
-input, textarea {
+input, textarea, select {
   background: none;
   border: 1px solid #333;
   border-radius: 2px;
@@ -363,23 +372,43 @@ textarea {
   margin-bottom: 11px;
   vertical-align: text-top;
 }
+select {
+  background: url('../img/debug/baseline.png') no-repeat right center, transparent;
+  font-size: 1em;
+  line-height: 1.3125;
+  -webkit-appearance: button;
+  /* TODO */
+}
+select.disabled {
+  color: #aaa;
+}
+/* @group Labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0;
+}
 /* @group Inlined Labels */
-.inlined label {
+label.inlined {
   color: #666;
+  font-weight: normal;
+  margin: 0;
   opacity: 0;
   position: absolute;
   right: 20px;
   -webkit-transition: all 0.2s ease-in-out;
 }
-.inlined.focus label {
-  opacity: 0.5;
+.focus label.inlined {
+  opacity: 1;
   right: 13px;
-  -webkit-transition: opacity 0.05s ease-in-out;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  -webkit-transition: right 0.1s ease-in-out;
 }
-.inlined.has-text label {
+.has-text label.inlined {
   opacity: 0.1;
   right: 13px;
 }
+/* @end */
 ::-webkit-input-placeholder {
   vertical-align: bottom;
 }
@@ -453,7 +482,7 @@ footer {
   background: url('../img/debug/Baseline.png');
 }
 .debug #wrapper {
-  background-color: rgba(169, 177, 224, 0.02);
+  background-color: rgba(169, 177, 224, 0.04);
 }
 .debug input, .debug textarea {
   background-color: rgba(100, 100, 100, 0.2);

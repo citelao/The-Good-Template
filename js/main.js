@@ -1,16 +1,18 @@
 $(document).ready(function(){
+	hljs.initHighlightingOnLoad();
+		
 	/* http://www.zurb.com/playground/inline-form-labels */
-	$("input").focus(function() {
+	$("input, textarea").focus(function() {
 		$(this).parent().addClass("focus");
 	});
 	
-	$("input").blur(function() {
+	$("input, textarea").blur(function() {
 		if($(this).val() == "") {
 			$(this).parent().removeClass("focus").removeClass("has-text");
 		}
 	});
 	
-	$("input").keypress(function() {
+	$("input, textarea").keypress(function() {
 		$(this).parent().removeClass("focus").addClass("has-text");
 	});
 });

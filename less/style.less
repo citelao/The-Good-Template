@@ -76,6 +76,7 @@ blockquote, q {
 @h3-size: 1.25; //20px
 @h4-size: 1; //16px
 
+@small-size: 0.75; //12px
 
 body {
 	font: @base-font ~"/" @line-height Arial, sans-serif;
@@ -125,6 +126,7 @@ h4 {
 	font-size: @h4-size * @base-font; //1em = 16px
 	line-height: ceil(@h4-size / @line-height)  * @line-height / @h4-size; //1.3125 = 21px
 	padding-bottom: @base-font * @line-height / @h4-size; //1.3125em = 21px
+	font-variant: small-caps;
 }
 
 /* @end */
@@ -140,11 +142,16 @@ a {
 		position: relative;
 		top: 1px;
 	}
+	
+	&:focus {
+		outline: dotted;
+	}
 }
 
 /* @group Tooltips */
 	.tooltip {
 		border-bottom: 1px dotted;
+		cursor: pointer;
 	}
 	
 		.tooltip:hover:after,
@@ -180,13 +187,14 @@ blockquote {
 
 code {
 	border-radius: 2px;
+	color: #93a1a1;
 	font-family: "Ubuntu Mono", monospace;
 	margin: -4px 0;
 	padding: 4px;
 	-moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
 	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
-	background-color: #e7cb9a;
+	background-color: #002b36;
 }
 
 	pre > code {
@@ -234,8 +242,8 @@ sup {
 	}
 
 small {
-	font-size: 10px;
-	line-height: 10px;
+	font-size: @small-size * @base-font; //1.25em = 20px
+	line-height: @small-size * @base-font;
 }
 
 /* @group Lists */
@@ -359,8 +367,11 @@ form {
 		clear: both;
 		color: #999;
 		display: block;
+		font-size: @small-size * @base-font; //1.25em = 20px
+		line-height: @small-size * @base-font;
+		font-variant: small-caps;
+		margin: 2px 0 21px -4px;
 		text-align: center;
-		margin: -1px 0 19px -4px;
 	}
 	
 	.secondary {
@@ -373,7 +384,7 @@ form > ol {
 	list-style: none;
 	
 	/* debug */
-	width: 200px;
+	width: 300px;
 	
 	li {
 		position: relative;
@@ -381,7 +392,8 @@ form > ol {
 }
 
 input,
-textarea {
+textarea,
+select {
 	background: none;
 	border: 1px solid #333;
 	border-radius: 2px;
@@ -398,26 +410,52 @@ textarea {
 		margin-bottom: 11px;
 		vertical-align: text-top;
 	}
+	
+	select {
+		background: url('../img/debug/baseline.png') no-repeat right center, transparent;
+		font-size: @base-font;
+		line-height: @line-height;
+		-webkit-appearance: button;
+		
+		/* TODO */		
+		&.disabled {
+			color: #aaa;
+		}
+	}
 
-/* @group Inlined Labels */
-.inlined label {
-	color: #666;
-	opacity: 0;
-	position: absolute;
-	right: 20px;
-	-webkit-transition: all 0.2s ease-in-out;
+/* @group Labels */
+
+label {
+	display: block;
+	font-weight: bold;
+	margin: 10px 0;
 }
 
-.inlined.focus label {
-	opacity: 0.5;
-	right: 13px;
-	-webkit-transition: opacity 0.05s ease-in-out;
-}
-
-.inlined.has-text label {
-	opacity: 0.1;
-	right: 13px;
-}
+	/* @group Inlined Labels */
+	
+	label.inlined {
+		color: #666;
+		font-weight: normal;
+		margin: 0;
+		opacity: 0;
+		position: absolute;
+		right: 20px;
+		-webkit-transition: all 0.2s ease-in-out;
+	}
+	
+	.focus label.inlined {
+		opacity: 1;
+		right: 13px;
+		-webkit-transition: opacity 0.1s ease-in-out;
+		-webkit-transition: right 0.1s ease-in-out;
+	}
+	
+	.has-text label.inlined {
+		opacity: 0.1;
+		right: 13px;
+	}
+	
+	/* @end */
 
 ::-webkit-input-placeholder {
 	vertical-align: bottom;
@@ -514,7 +552,7 @@ body {
 }
 
 .debug #wrapper {
-	background-color: rgba(169, 177, 224, 0.02);
+	background-color: rgba(169, 177, 224, 0.04);
 }
 
 .debug input,

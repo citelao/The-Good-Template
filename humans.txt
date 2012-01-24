@@ -10,5 +10,5 @@ Location: GA, USA
 /* SITE */
 Last update: YYYY/MM/DD
 Standards: HTML5, CSS3
-Components: Modernizr, jQuery, Google Analytics
+Components: Modernizr, jQuery, Google Analytics, Highlight.js
 Software: Espresso, LESS.app, Codekit, Gitbox, GitHub
