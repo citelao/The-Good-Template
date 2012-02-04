@@ -114,6 +114,7 @@ body {
 h5,
 h6,
 h7,
+dl,
 ol,
 p,
 pre,
@@ -208,7 +209,7 @@ code {
 }
 pre > code {
   display: block;
-  margin: 17px 16px -4px -4px;
+  margin: 15px 16px -4px -4px;
   overflow-x: scroll;
 }
 del {
@@ -266,7 +267,7 @@ ol ol {
 /* @group Table */
 table {
   margin: 5px;
-  padding: 5px 5px 6px;
+  padding: 5px;
   /*		border: 1px solid;*/
 
 }
@@ -335,7 +336,6 @@ form {
   margin: 0 auto;
 }
 form aside {
-  clear: both;
   color: #999;
   display: block;
   font-size: 0.75em;
@@ -373,7 +373,7 @@ textarea {
   vertical-align: text-top;
 }
 select {
-  background: url('../img/debug/baseline.png') no-repeat right center, transparent;
+  background: url('../img/all/arrow.png') no-repeat right center, transparent;
   font-size: 1em;
   line-height: 1.3125;
   -webkit-appearance: button;
@@ -484,7 +484,7 @@ footer {
 .debug #wrapper {
   background-color: rgba(169, 177, 224, 0.04);
 }
-.debug input, .debug textarea {
+.debug input, .debug textarea, .debug select {
   background-color: rgba(100, 100, 100, 0.2);
 }
 .debug .button {

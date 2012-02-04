@@ -15,4 +15,8 @@ $(document).ready(function(){
 	$("input, textarea").keypress(function() {
 		$(this).parent().removeClass("focus").addClass("has-text");
 	});
+//	
+//	$("select").blur(function(i) {
+//		
+//	});
 });
