@@ -118,8 +118,12 @@ dl,
 ol,
 p,
 pre,
+table,
 ul {
   padding-bottom: 1.3125em;
+}
+blockquote {
+  margin-bottom: 1.3125em;
 }
 /* @group Headers */
 h1,
@@ -187,21 +191,30 @@ acronym {
   cursor: help;
 }
 big {
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 1.125em;
+  line-height: 1.125em;
 }
 blockquote {
-  text-indent: 21px;
   margin-left: -10px;
   padding-left: 22px;
   border-left: 10px solid #999;
 }
+blockquote > cite {
+  color: #999;
+}
+blockquote > cite:before {
+  content: "—";
+}
 code {
   border-radius: 2px;
   color: #93a1a1;
-  font-family: "Ubuntu Mono", monospace;
-  margin: -4px 0;
-  padding: 4px;
+  /*	font-family: Menlo, monospace;*/
+
+  /*	font-size: 16px;*/
+
+  /*	margin: -4px 0;
+	padding: 4px;*/
+
   -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
@@ -209,7 +222,7 @@ code {
 }
 pre > code {
   display: block;
-  margin: 15px 16px -4px -4px;
+  margin: 13px 16px -4px -4px;
   overflow-x: scroll;
 }
 del {
@@ -228,12 +241,9 @@ kbd {
   border-bottom: 4px outset;
   border-radius: 4px;
 }
-p {
-  text-indent: 1.3125;
-}
 sub, sup {
-  font-size: 10px;
-  line-height: 10px;
+  font-size: 0.625em;
+  line-height: 0.625em;
 }
 sub {
   top: 5px;
@@ -267,9 +277,7 @@ ol ol {
 /* @group Table */
 table {
   margin: 5px;
-  padding: 5px;
-  /*		border: 1px solid;*/
-
+  padding: 6px 5px 5px;
 }
 caption {
   display: none;
@@ -341,7 +349,7 @@ form aside {
   font-size: 0.75em;
   line-height: 0.75em;
   font-variant: small-caps;
-  margin: 2px 0 21px -4px;
+  margin: 1px 0 21px -4px;
   text-align: center;
 }
 form .secondary {
@@ -361,7 +369,7 @@ input, textarea, select {
   background: none;
   border: 1px solid #333;
   border-radius: 2px;
-  margin: -5px 0 16px -4px;
+  margin: -4px 0 16px -4px;
   padding: 4px;
   width: 100%;
 }
