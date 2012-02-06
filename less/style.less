@@ -5,9 +5,12 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, input, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+fieldset, form, label, legend, 
+header, nav, section, footer,
 table, caption, tbody, textarea, tfoot, thead, tr, th, td {
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -121,6 +124,10 @@ h5,
 h6,
 h7 {
 	font-weight: bold;
+	
+	& > strong {
+		font-variant: small-caps;
+	}
 }
 
 h1 {
@@ -237,6 +244,10 @@ kbd {
 	border-right: 3px outset;
 	border-bottom: 4px outset;
 	border-radius: 4px;
+}
+
+strong {
+	font-weight: bold;
 }
 
 sub,
@@ -509,16 +520,30 @@ label {
 /* @group Basic (320px) */
 body {
 	width: 90%;
-	margin: 20px auto;
+	margin: 20px auto -20px;
 	min-width: 320px;
 }
 	
-	header,
-	nav,
-	section,
-	footer {
+	/* stolen from inuit.css */
+	.grids {
+		list-style:none;
+		clear:both;
+		margin: 0 0 0 -20px;
+	}
+	
+	[class^="grid-"]{
+		float:left;
+		margin: 0 10px 0 0;
 		width: 100%;
-		padding: 0 10px;
+	}
+	.grids [class^="grid-"]{
+		margin:0 0 0 10px;
+	}
+	
+	/* Allow nested grids: */
+	[class^="grid-"] .grids{
+		width:auto;
+		margin:0 -2.083%;
 	}
 	
 	#site-nav {
@@ -535,22 +560,36 @@ body {
 @media screen and (min-width: 480px) {
 	body {
 		width: 440px;
-		margin: 20px auto;
 	}
 }
 
 @media screen and (min-width: 660px) {
 	body {
 		width: 620px;
-		margin: 20px auto;
 	}
+	
+	.grid-1  { width: 4.167% }
+	.grid-2  { width: 10.417% }
+	.grid-3  { width: 16.667% }
+	.grid-4  { width: 22.917% }
+	.grid-5  { width: 29.167% }
+	.grid-6  { width: 35.417% }
+	.grid-7  { width: 41.667% }
+	.grid-8  { width: 47.917% }
+	.grid-9  { width: 54.167% }
+	.grid-10 { width: 60.417% }
+	.grid-11 { width: 66.667% }
+	.grid-12 { width: 72.917% }
+	.grid-13 { width: 79.167% }
+	.grid-14 { width: 85.417% }
+	.grid-15 { width: 91.667% }
+	.grid-16 { width: 97.917%; margin: 0 }
 }
 
 
 @media screen and (min-width: 960px) {
 	body {
 		width: 920px;
-		margin: 20px auto;
 	}
 }
 
@@ -562,13 +601,13 @@ body {
 }
 
 .debug #wrapper {
-	background-color: rgba(169, 177, 224, 0.04);
+	background: rgba(137, 135, 243, 0.1);
 }
 
 .debug input,
 .debug textarea,
 .debug select {
-	background-color: rgba(100, 100, 100, .2);
+	background-color: rgba(137, 135, 243, 0.1);
 }
 
 .debug .button {

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html class="dfebug no-js" lang="en-US">
+<html class="ddebug no-js" lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
@@ -17,8 +17,10 @@
 	
 	<link rel="author" href="humans.txt" />
 	<link rel="stylesheet" href="css/style.css" />
+	<!-- TODO Fallback -->
 	<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/solarized_dark.min.css">	
 	
+	<!-- TODO NEED -->
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/mobile/apple-touch-icon-large.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/mobile/apple-touch-icon-medium.png">
@@ -28,265 +30,268 @@
 	<script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="wrapper">
+<div id="wrapper">
+	<header>
+		<hgroup>
+			<h1>The Good Template</h1>
+			<h2>responsible web site framework</h2>
+		</hgroup>
+	</header>
+	<nav id="site-nav">
+		<ul>
+			<li><a href="#">nav 1</a></li>
+			<li><a href="#">nav 2</a></li>
+			<li><a href="#">nav 3</a></li>
+		</ul>
+	</nav>
+	<div id="main" role="main">
+		<section id="what">
+			<h3>What is <strong>The Good Template</strong>?</h3>
+			<p>
+				<strong>The Good Template</strong> is a responsive,
+				responsible web design framework designed in 
+				<a href="http://lesscss.org">LESS</a>. It attempts to
+				lay out a strong text baseline&mdash; for everything.
+				It wants to create sensible form stylesheets and simple
+				sweet responsive grids for multiple screen sizes. It 
+				pays its taxes and has two strapping young children.
+			</p>
+		</section>
 		
-		<header>
-			<hgroup>
-				<h1>The Good Template</h1>
-				<h2>A responsive web site framework</h2>
-			</hgroup>
-		</header>
-		<!--<nav id="site-nav">
-			<ul>
-				<li><a href="#">nav 1</a></li>
-				<li><a href="#">nav 2</a></li>
-				<li><a href="#">nav 3</a></li>
-			</ul>
-		</nav>-->
-		<div id="main" role="main">	
-			<section id="what">
-				<h3>What is The Good Template?</h3>
-				<p>
-					<strong>The Good Template</strong> is a responsive
-					web design framework designed in 
-					<a href="http://lesscss.org">LESS</a>. It attempts to
-					quickly lay out helpful text baselines, form styles,
-					nifty features, and a simple fixed &amp; responsive grid.
-				</p>
-				
-				<h4>Features.</h4>
-				
-				<ul>
-					<li>Awesome text baseline.</li>
-					<li>Stupendous responsive grid.</li>
-					<li>Grand form styling.
-						<ol>
-							<li>Validation!</li>
-							<li>Selects!</li>
-						</ol>
-					</li>
-					<li>Strong <acronym title="HyperText Markup Language 5">HTML5</acronym> templates.</li>
-					<li>Crazy LESS mixins.</li>
-				</ul>
-			</section>
-						
-			<section>
-				<h3>Why does The Good Template exist?</h3>
-				<p>
-					Yes, there are tons of templates, but I figured I'd try 
-					programming my own. It has what <em>I</em> want. Nothing
-					more. Like <code class="html">&lt;kbd></code> styling: 
-					<kbd>⌘</kbd> <kbd>+</kbd>; subscripts and superscripts:
-					O<sub>2</sub><sup>2+</sup>; <big>big stuff</big>, 
-					<small>small stuff</small>, &amp; <del>outdated stuff</del> 
-					<ins>current stuff</ins>. It has 
-					<span class="tooltip" title="Important hidden stuff">tooltip</span> 
-					syntax that works on <acronym title="Amazing Chronological Reality 
-					Observation, Not Your Mother's Stuff">ACRONYMS</acronym>
-				</p>
-				
-				<blockquote>
-					<q>
-						Divorce is probably of nearly the same date as marriage.
-						I believe, however, that marriage is some weeks the more 
-						ancient.
-					</q>
-					
-					<cite>Voltaire</cite>
-				</blockquote>
-				
-				<h4>Compared to other templates:</h4>
-				
-				<!-- tables
-						.hasfooter - has a footer
-			 	-->		
-				
-				<table summary="" class="hasfooter" cellspacing="0">
-					<caption>
-						Template Comparison
-					</caption>
+		<section id="features">
+			<h4>Features.</h4>
 			
-					<thead>
-						<tr>
-							<th class="hidden">Feature</th>
-							<th>The Good Template</th>
-							<th>HTML5Boilerplate</th>
-							<th>Bootstrap.css</th>
-						</tr>
-					</thead>
-					<tfoot>
-						<tr>
-					      	<td class="hidden">Feature</td>
-							<td>The Good Template</td>
-							<td>HTML5Boilerplate</td>
-							<td>Bootstrap.css</td>
-						</tr>
-					</tfoot>
-					<tbody>
-						<tr>
-							<td>Text Baseline</td>
-							<td>Yes</td>
-							<td>No</td>
-							<td>No</td>
-						</tr>
+			<ul>
+				<li>Awesome text baseline.</li>
+				<li>Stupendous responsive grid.</li>
+				<li>Grand form styling.
+					<ol>
+						<li>Validation!</li>
+						<li>Selects!</li>
+					</ol>
+				</li>
+				<li>Strong <acronym title="HyperText Markup Language 5">HTML5</acronym> templates.</li>
+				<li>Crazy LESS mixins.</li>
+			</ul>
+		</section>
+		
+		<section id="why">
+			<h3>Why does The Good Template exist?</h3>
+			<p>
+				Yes, there are tons of templates, but I figured I'd try 
+				programming my own. It has what <em>I</em> want. Nothing
+				more. Like <code class="html">&lt;kbd></code> styling: 
+				<kbd>⌘</kbd> <kbd>+</kbd>; subscripts and superscripts:
+				O<sub>2</sub><sup>2+</sup>; <big>big stuff</big>, 
+				<small>small stuff</small>, &amp; <del>outdated stuff</del> 
+				<ins>current stuff</ins>. It has 
+				<span class="tooltip" title="Important hidden stuff">tooltip</span> 
+				syntax that works on <acronym title="Amazing Chronological Reality 
+				Observation, Not Your Mother's Stuff">ACRONYMS</acronym>
+			</p>
+			
+			<blockquote>
+				<q>Blockquotes for good measure</q>
+				
+				<cite>Bennie</cite>
+			</blockquote>
+
 						
-						<tr>
-							<td>Gruber's Expertise</td>
-							<td>No</td>
-							<td>Yes</td>
-							<td>No</td>
-						</tr>
-						
-						<tr>
-							<td>What I want</td>
-							<td>Yes</td>
-							<td>No</td>
-							<td>No</td>
-						</tr>
-						
-						<tr>
-							<td>What you want</td>
-							<td>No</td>
-							<td>Yes</td>
-							<td>Yes</td>
-						</tr>
-				      </tbody>
-			    </table>
-			    
-			    <h4>Please note:</h4>
-			    
-			    <p>
-			    	There are some important rules about tables listed in the code snippet below.
-			    </p>
-			    
+			<h4>Compared to other templates:</h4>
+			
+			<!-- tables
+					.hasfooter - has a footer
+		 	-->		
+			
+			<table summary="Comparison between different website frameworks" class="hasfooter" cellspacing="0">
+				<!-- yikes TODO -->
+				<caption>
+					Template Comparison
+				</caption>
+		
+				<thead>
+					<tr>
+						<th class="hidden">Feature</th>
+						<th>The Good Template</th>
+						<th>HTML5Boilerplate</th>
+						<th>Bootstrap.css</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+				      	<td class="hidden">Feature</td>
+						<td>The Good Template</td>
+						<td>HTML5Boilerplate</td>
+						<td>Bootstrap.css</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td>Text Baseline</td>
+						<td>Yes</td>
+						<td>No</td>
+						<td>No</td>
+					</tr>
+					
+					<tr>
+						<td>Gruber's Expertise</td>
+						<td>No</td>
+						<td>Yes</td>
+						<td>No</td>
+					</tr>
+					
+					<tr>
+						<td>What I want</td>
+						<td>Yes</td>
+						<td>No</td>
+						<td>No</td>
+					</tr>
+					
+					<tr>
+						<td>What you want</td>
+						<td>No</td>
+						<td>Yes</td>
+						<td>Yes</td>
+					</tr>
+			      </tbody>
+		    </table>
+		    
+		    <h4>Please note:</h4>
+		    
+		    <p>
+		    	There are some important rules about tables listed in the code snippet below.
+		    </p>
+		    
 <pre><code class="html">&lt;!-- All tables must have cellspacing="0" -->
 &lt;!-- Tables with a footer *must* have the class .hasfooter -->
 &lt;table class="hasfooter">
-  &lt;tfoot>
-    &lt;tr>
-      &lt;td>Price&lt;/td>
-      &lt;td>$55.00&lt;/td>
-    &lt;/tr>
-  &lt;/tfoot>
+&lt;tfoot>
+&lt;tr>
+  &lt;td>Price&lt;/td>
+  &lt;td>$55.00&lt;/td>
+&lt;/tr>
+&lt;/tfoot>
 &lt;/table>
 </code></pre>
-			</section>
+		</section>
+		
+		<section>
+			<h3>Any questions?</h3>
 			
-			<section>
-				<h3>Terms</h3>
+			<dl>
+				<dt>Who are you?</dt>
 				
-				<dl>
-					<dt>Definition Term</dt>
-					
-					<dd>Definition data. It's just something I threw together. In the
-					beginning was the word. And the word wrapped. I'll be looking soon for
-					opportunities to style this text. In the meantime it will do merely to
-					occupy space.</dd>
+				<dd>
+					I'm Ben Stolovitz, a 16&frac34;-year-old web dev living in
+					Georgia. I don't have a lot of time for web development, but
+					when I do, I choose Espresso.
+				</dd>
 
-					<dt>Definition Term</dt>
-			      
-			        <dd>Definition data. It's just something I threw together. In the
-			        beginning was the word. And the word wrapped. I'll be looking soon for
-			        opportunities to style this text. In the meantime it will do merely to
-			        occupy space.</dd>
-			    </dl>
-			</section>
-						    
-			<section id="contact">
-				<h3>Contact.</h3>
-				<div class="box error">This is an error.</div>
-				<div class="box info">This is information.</div>
-				<div class="note success">This is success.</div>
-				<div class="note warning">This is a warning.</div>
-				
-				
-				<form action="javascript:void(0)">
-					<ol>
-						<li>
-							<label for="name">name:</label>
-							<label for="name" class="inlined">name</label>
-							<input type="text" placeholder="John Smith" id="name" />
-						</li>
-						
-						<li>
-							<label for="name">email:</label>
-							<label for="email" class="inlined">email</label>
-							<input type="text" placeholder="john@smith.com" id="email" />
-							<aside>(so I can spam you)</aside>
-						</li>
-						
-						<li>
-							<label for="tone">regarding:</label>
-							<select name="tone" id="tone">
-								<option value="" disabled>Choose your primary emotion.</option>
-								<option value="hate">Hate</option>
-								<option value="love">Love</option>
-							</select>
-							<aside>Still have to style <!--<code>&lt;select></code>--></aside>
-						</li>
-						
-						<li>
-							<label for="name">message:</label>
-							<label for="email" class="inlined">message</label>
-							<textarea name="" id="" placeholder="I love/hate your site!" cols="30" rows="10"></textarea>
-						</li>
-						
-						<li>
-							<input type="submit" value="Mail" class="button" data-icon="" onclick="javascript:void(0)" />
-							<a class="secondary" href="javascript:void(0)">Cancel</a>
-						</li>
-					</ol>
-				</form>
-				
-				<address>
-					123 Easy Rd. <br />
-					Somewhere, ST 12345 
-				</address>
-			</section>
-		</div>
-				<footer>
-					Copyright &copy; 2011 Ben.Stolovitz. All Rights Reserved.
-				</footer>
-			</div>
+				<dt>Are you really 16?</dt>
+		      
+		        <dd>
+		        	16&frac34;.
+		        </dd>
+		    </dl>
+		</section>
+					    
+		<section id="contact">
+			<h3>Contact.</h3>
+			<div class="box error">This is an error.</div>
+			<div class="box info">This is information.</div>
+			<div class="note success">This is success.</div>
+			<div class="note warning">This is a warning.</div>
 			
-			<!-- TODO FIX -->
-			<script src="https//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
-			<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
 			
-			<script>
-				window.jQuery || document.write('<script src="js/jquery-1.5.2.min.js">\x3C/script>')
-			</script>
+			<form action="javascript:void(0)">
+				<ol>
+					<li>
+						<label for="name">name:</label>
+						<label for="name" class="inlined">name</label>
+						<input type="text" placeholder="John Smith" id="name" />
+					</li>
+					
+					<li>
+						<label for="name">email:</label>
+						<label for="email" class="inlined">email</label>
+						<input type="text" placeholder="john@smith.com" id="email" />
+						<aside>(so I can spam you)</aside>
+					</li>
+					
+					<li>
+						<label for="tone">regarding:</label>
+						<select name="tone" id="tone">
+							<option value="" disabled>Choose your primary emotion.</option>
+							<option value="hate">Hate</option>
+							<option value="love">Love</option>
+						</select>
+						<aside>Still have to style <!--<code>&lt;select></code>--></aside>
+					</li>
+					
+					<li>
+						<label for="name">message:</label>
+						<label for="email" class="inlined">message</label>
+						<textarea name="" id="" placeholder="I love/hate your site!" cols="30" rows="10"></textarea>
+					</li>
+					
+					<li>
+						<input type="submit" value="Mail" class="button" data-icon="" onclick="javascript:void(0)" />
+						<a class="secondary" href="javascript:void(0)">Cancel</a>
+					</li>
+				</ol>
+			</form>
 			
-			<script src="js/main.js"></script>
-			
-			<!--[if lt IE 9]>
-				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-				<script src="js/selectivizr.js" type="text/javascript"></script>
-			<![endif]-->
-			
-			<!--[if lt IE 7]>
-				<script src="js/DD_belatedPNG.min.js"></script>
-				<script>
-					DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb
-				</script>
-			<![endif]-->
-			
-			<!-- ON RELEASE CHANGE -->
-			<script>
-			 var _gaq = _gaq || [];
-			 _gaq.push(['_setAccount', 'UA-XXXXX-X']);
-			 _gaq.push(['_trackPageview']);
-			 (function() {
-			  var ga = document.createElement('script');
-			  ga.type = 'text/javascript';
-			  ga.async = true;
-			  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			  var s = document.getElementsByTagName('script')[0];
-			  s.parentNode.insertBefore(ga, s);
-			 })();
-			</script>
-			
-			<!-- DEBUG -->
-			<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-		</body>
-		</html>
+			<address>
+				123 Easy Rd. <br />
+				Somewhere, ST 12345 
+			</address>
+		</section>
+	</div>
+	<footer class="grid-16">
+		Copyright &copy; 2011 Ben.Stolovitz. All Rights Reserved.
+	</footer>
+	
+	<script src="https://www.google.com/jsapi"></script>
+	<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+	
+	<script>
+		google.load("jquery", "1.7.1");
+		window.jQuery || document.write('<script src="js/jquery-1.5.2.min.js">\x3C/script>')
+	</script>
+	
+	<script src="js/main.js"></script>
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="js/selectivizr.js"></script>
+	<![endif]-->
+	
+	<!--[if lt IE 7]>
+		<script src="js/DD_belatedPNG.min.js"></script>
+		<script>
+			DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images.
+		</script>
+	<![endif]-->
+	
+	<!-- ON RELEASE CHANGE -->
+	<script>
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	
+	<!-- Live Reload -->
+	<script>
+		document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+	</script>
+</div>
+</body>
+</html>
