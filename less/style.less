@@ -8,9 +8,9 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, 
 header, nav, section, footer,
 table, caption, tbody, textarea, tfoot, thead, tr, th, td {
-	box-sizing: border-box;
 	-webkit-box-sizing: border-box; 
 	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -357,7 +357,7 @@ dd {
 	cursor: hand;
 	display: inline;
 	text-shadow: 0 -1px 0 darken(@buttonColor, 20%);
-	margin: 12px 0 0 0;
+	margin: 12px 0;
 	padding: 8px;
 	-webkit-transition: background-color 0.2s ease-in-out 0s;
 	
@@ -371,7 +371,7 @@ dd {
 	
 	&:active {
 		padding-bottom: 7px;
-		margin-bottom: 1px;
+		margin-bottom: 13px;
 		position: relative;
 		top: 1px;
 	}
@@ -395,7 +395,7 @@ form {
 	
 	.secondary {
 		float: right;
-		padding-top: 18px;
+		padding-top: 21px;
 	}
 }
 
@@ -427,7 +427,6 @@ select {
 
 	textarea {
 		margin-bottom: 11px;
-		vertical-align: text-top;
 	}
 	
 	select {
@@ -435,8 +434,6 @@ select {
 		font-size: @base-font;
 		line-height: @line-height;
 		-webkit-appearance: button;
-		
-		
 		
 		/* TODO */		
 		&.disabled {
@@ -488,24 +485,24 @@ label {
 /* @end */
 /* @end */
 
-/* @group Layout */
+/* @group Layout & GS */
 
 /* @group Clearfix */
 /* http://nicolasgallagher.com/micro-clearfix-hack/ */
 
 .cf {
     zoom:1;
+    
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    
+    &:after {
+        clear:both;
+    }
 }
-
-	.cf:before,
-	.cf:after {
-	    content:"";
-	    display:table;
-	}
-	
-	.cf:after {
-	    clear:both;
-	}
 
 /* @end */
 
@@ -528,23 +525,21 @@ body {
 	.grids {
 		list-style:none;
 		clear:both;
-		margin: 0 0 0 -20px;
+		.cf;
 	}
 	
 	[class^="grid-"]{
 		float:left;
-		margin: 0 10px 0 0;
 		width: 100%;
-	}
-	.grids [class^="grid-"]{
-		margin:0 0 0 10px;
 	}
 	
 	/* Allow nested grids: */
 	[class^="grid-"] .grids{
 		width:auto;
-		margin:0 -2.083%;
+		margin:0 -2.083%; //TODO fix
 	}
+	
+	.gridify(@columns) { width: @column-width * @columns - @column-margin; }
 	
 	#site-nav {
 		ul {
@@ -563,34 +558,54 @@ body {
 	}
 }
 
-@media screen and (min-width: 660px) {
-	body {
-		width: 620px;
-	}
+@media screen and (min-width: 680px) {
+	.grids { margin: 0 0 0 -10px; }
 	
-	.grid-1  { width: 4.167% }
-	.grid-2  { width: 10.417% }
-	.grid-3  { width: 16.667% }
-	.grid-4  { width: 22.917% }
-	.grid-5  { width: 29.167% }
-	.grid-6  { width: 35.417% }
-	.grid-7  { width: 41.667% }
-	.grid-8  { width: 47.917% }
-	.grid-9  { width: 54.167% }
-	.grid-10 { width: 60.417% }
-	.grid-11 { width: 66.667% }
-	.grid-12 { width: 72.917% }
-	.grid-13 { width: 79.167% }
-	.grid-14 { width: 85.417% }
-	.grid-15 { width: 91.667% }
-	.grid-16 { width: 97.917%; margin: 0 }
+	[class^="grid-"] { margin: 0 10px 0 0;	
+		.grids & { margin:0 0 0 10px; } }
+
+	@body-width: 660px;
+	@total-columns: 12;
+	@column-width: @body-width/@total-columns;
+	@column-margin: 10px;
+
+	body { width: @body-width; }
+	
+	.grid-1  { .gridify( 1) }
+	.grid-2  { .gridify( 2) }
+	.grid-3  { .gridify( 3) }
+	.grid-4  { .gridify( 4) }
+	.grid-5  { .gridify( 5) }
+	.grid-6  { .gridify( 6) }
+	.grid-7  { .gridify( 7) }
+	.grid-8  { .gridify( 8) }
+	.grid-9  { .gridify( 9) }
+	.grid-10 { .gridify(10) }
+	.grid-11 { .gridify(11) }
+	.grid-12 { .gridify(12) }
 }
 
 
-@media screen and (min-width: 960px) {
-	body {
-		width: 920px;
-	}
+@media screen and (min-width: 980px) {
+	@body-width: 960px;
+	@total-columns: 12;
+	@column-width: @body-width/@total-columns;
+	@column-margin: 10px;
+	
+	body { width: @body-width; }
+	
+	.grid-1  { .gridify( 1) }
+	.grid-2  { .gridify( 2) }
+	.grid-3  { .gridify( 3) }
+	.grid-4  { .gridify( 4) }
+	.grid-5  { .gridify( 5) }
+	.grid-6  { .gridify( 6) }
+	.grid-7  { .gridify( 7) }
+	.grid-8  { .gridify( 8) }
+	.grid-9  { .gridify( 9) }
+	.grid-10 { .gridify(10) }
+	.grid-11 { .gridify(11) }
+	.grid-12 { .gridify(12) }
 }
 
 /* @end */
@@ -617,5 +632,10 @@ body {
 
 .debug code {
 	background-color: rgba(231, 203, 154, 0.5);
+}
+
+.debug [class^="grid-"]{
+	background: rgba(137, 135, 243, 0.2);
+	margin-bottom: 21px; //TODO Remove
 }
 /* @end */

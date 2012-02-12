@@ -64,9 +64,9 @@ thead,
 tr,
 th,
 td {
-  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
@@ -78,7 +78,8 @@ td {
   line-height: inherit;
   vertical-align: baseline;
 }
-header, section {
+header,
+section {
   display: block;
 }
 :focus {
@@ -89,7 +90,8 @@ body {
   color: #333;
   background: #fff;
 }
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 /* tables still need 'cellspacing="0"' in the markup */
@@ -97,7 +99,9 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 }
-caption, th, td {
+caption,
+th,
+td {
   text-align: left;
   font-weight: normal;
 }
@@ -108,7 +112,8 @@ q:after {
   content: "";
   display: none;
 }
-blockquote, q {
+blockquote,
+q {
   quotes: "" "";
 }
 /* @end */
@@ -190,7 +195,8 @@ a:focus {
   border-bottom: 1px dotted;
   cursor: pointer;
 }
-.tooltip:hover:after, acronym:hover:after {
+.tooltip:hover:after,
+acronym:hover:after {
   content: attr(title);
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
@@ -259,7 +265,8 @@ kbd {
 strong {
   font-weight: bold;
 }
-sub, sup {
+sub,
+sup {
   font-size: 0.625em;
   line-height: 0.625em;
 }
@@ -275,7 +282,8 @@ small {
   line-height: 0.75em;
 }
 /* @group Lists */
-ol, ul {
+ol,
+ul {
   margin-left: 21px;
 }
 ol {
@@ -300,12 +308,14 @@ table {
 caption {
   display: none;
 }
-th, td {
+th,
+td {
   border-bottom: 1px solid #333;
   border-right: 1px solid #333;
   padding: 10px 10px;
 }
-th, tfoot td {
+th,
+tfoot td {
   font-weight: bold;
   text-align: center;
 }
@@ -313,7 +323,8 @@ table.hasfooter tfoot td {
   border-bottom: 0;
   padding-bottom: 11px;
 }
-th:last-child, td:last-child {
+th:last-child,
+td:last-child {
   border-right: 0;
 }
 table .hidden {
@@ -342,7 +353,7 @@ dd {
   cursor: hand;
   display: inline;
   text-shadow: 0 -1px 0 #3232bc;
-  margin: 12px 0 0 0;
+  margin: 12px 0;
   padding: 8px;
   -webkit-transition: background-color 0.2s ease-in-out 0s;
 }
@@ -354,7 +365,7 @@ dd {
 }
 .button:active {
   padding-bottom: 7px;
-  margin-bottom: 1px;
+  margin-bottom: 13px;
   position: relative;
   top: 1px;
 }
@@ -372,7 +383,7 @@ form aside {
 }
 form .secondary {
   float: right;
-  padding-top: 18px;
+  padding-top: 21px;
 }
 form > ol {
   list-style: none;
@@ -383,7 +394,9 @@ form > ol {
 form > ol li {
   position: relative;
 }
-input, textarea, select {
+input,
+textarea,
+select {
   background: none;
   border: 1px solid #333;
   border-radius: 2px;
@@ -396,7 +409,6 @@ input[type=submit] {
 }
 textarea {
   margin-bottom: 11px;
-  vertical-align: text-top;
 }
 select {
   background: url('../img/all/arrow.png') no-repeat right center, transparent;
@@ -443,13 +455,14 @@ label.inlined {
 }
 /* @end */
 /* @end */
-/* @group Layout */
+/* @group Layout & GS */
 /* @group Clearfix */
 /* http://nicolasgallagher.com/micro-clearfix-hack/ */
 .cf {
   zoom: 1;
 }
-.cf:before, .cf:after {
+.cf:before,
+.cf:after {
   content: "";
   display: table;
 }
@@ -474,15 +487,19 @@ body {
 .grids {
   list-style: none;
   clear: both;
-  margin: 0 0 0 -20px;
+  zoom: 1;
+}
+.grids:before,
+.grids:after {
+  content: "";
+  display: table;
+}
+.grids:after {
+  clear: both;
 }
 [class^="grid-"] {
   float: left;
-  margin: 0 10px 0 0;
   width: 100%;
-}
-.grids [class^="grid-"] {
-  margin: 0 0 0 10px;
 }
 /* Allow nested grids: */
 [class^="grid-"] .grids {
@@ -501,63 +518,95 @@ body {
     width: 440px;
   }
 }
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 680px) {
+  .grids {
+    margin: 0 0 0 -10px;
+  }
+  [class^="grid-"] {
+    margin: 0 10px 0 0;
+  }
+  .grids [class^="grid-"] {
+    margin: 0 0 0 10px;
+  }
   body {
-    width: 620px;
+    width: 660px;
   }
   .grid-1 {
-    width: 4.167%;
+    width: 45px;
   }
   .grid-2 {
-    width: 10.417%;
+    width: 100px;
   }
   .grid-3 {
-    width: 16.667%;
+    width: 155px;
   }
   .grid-4 {
-    width: 22.917%;
+    width: 210px;
   }
   .grid-5 {
-    width: 29.167%;
+    width: 265px;
   }
   .grid-6 {
-    width: 35.417%;
+    width: 320px;
   }
   .grid-7 {
-    width: 41.667%;
+    width: 375px;
   }
   .grid-8 {
-    width: 47.917%;
+    width: 430px;
   }
   .grid-9 {
-    width: 54.167%;
+    width: 485px;
   }
   .grid-10 {
-    width: 60.417%;
+    width: 540px;
   }
   .grid-11 {
-    width: 66.667%;
+    width: 595px;
   }
   .grid-12 {
-    width: 72.917%;
-  }
-  .grid-13 {
-    width: 79.167%;
-  }
-  .grid-14 {
-    width: 85.417%;
-  }
-  .grid-15 {
-    width: 91.667%;
-  }
-  .grid-16 {
-    width: 97.917%;
-    margin: 0;
+    width: 650px;
   }
 }
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 980px) {
   body {
-    width: 920px;
+    width: 960px;
+  }
+  .grid-1 {
+    width: 70px;
+  }
+  .grid-2 {
+    width: 150px;
+  }
+  .grid-3 {
+    width: 230px;
+  }
+  .grid-4 {
+    width: 310px;
+  }
+  .grid-5 {
+    width: 390px;
+  }
+  .grid-6 {
+    width: 470px;
+  }
+  .grid-7 {
+    width: 550px;
+  }
+  .grid-8 {
+    width: 630px;
+  }
+  .grid-9 {
+    width: 710px;
+  }
+  .grid-10 {
+    width: 790px;
+  }
+  .grid-11 {
+    width: 870px;
+  }
+  .grid-12 {
+    width: 950px;
   }
 }
 /* @end */
@@ -568,7 +617,9 @@ body {
 .debug #wrapper {
   background: rgba(137, 135, 243, 0.1);
 }
-.debug input, .debug textarea, .debug select {
+.debug input,
+.debug textarea,
+.debug select {
   background-color: rgba(137, 135, 243, 0.1);
 }
 .debug .button {
@@ -577,5 +628,9 @@ body {
 }
 .debug code {
   background-color: rgba(231, 203, 154, 0.5);
+}
+.debug [class^="grid-"] {
+  background: rgba(137, 135, 243, 0.2);
+  margin-bottom: 21px;
 }
 /* @end */
