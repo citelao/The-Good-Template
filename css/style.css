@@ -69,6 +69,7 @@ td {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  position: relative;
   border: 0;
   outline: 0;
   font-weight: inherit;
@@ -78,8 +79,7 @@ td {
   line-height: inherit;
   vertical-align: baseline;
 }
-header,
-section {
+header, section {
   display: block;
 }
 :focus {
@@ -90,8 +90,7 @@ body {
   color: #333;
   background: #fff;
 }
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 /* tables still need 'cellspacing="0"' in the markup */
@@ -99,9 +98,7 @@ table {
   border-collapse: separate;
   border-spacing: 0;
 }
-caption,
-th,
-td {
+caption, th, td {
   text-align: left;
   font-weight: normal;
 }
@@ -112,8 +109,7 @@ q:after {
   content: "";
   display: none;
 }
-blockquote,
-q {
+blockquote, q {
   quotes: "" "";
 }
 /* @end */
@@ -184,7 +180,6 @@ a:hover {
   text-decoration: underline;
 }
 a:active {
-  position: relative;
   top: 1px;
 }
 a:focus {
@@ -195,8 +190,7 @@ a:focus {
   border-bottom: 1px dotted;
   cursor: pointer;
 }
-.tooltip:hover:after,
-acronym:hover:after {
+.tooltip:hover:after, acronym:hover:after {
   content: attr(title);
   background: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
@@ -216,7 +210,6 @@ big {
   line-height: 1.125em;
 }
 blockquote {
-  margin-left: -10px;
   padding-left: 22px;
   border-left: 10px solid #999;
 }
@@ -224,18 +217,16 @@ blockquote > cite {
   color: #999;
 }
 blockquote > cite:before {
-  content: "—";
+  content: " —";
 }
 code {
   border-radius: 2px;
   color: #93a1a1;
-  /*	font-family: Menlo, monospace;*/
-
+  font-family: Menlo, monospace;
   /*	font-size: 16px;*/
 
-  /*	margin: -4px 0;
-	padding: 4px;*/
-
+  margin: -4px 0;
+  padding: 4px;
   -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
@@ -265,8 +256,7 @@ kbd {
 strong {
   font-weight: bold;
 }
-sub,
-sup {
+sub, sup {
   font-size: 0.625em;
   line-height: 0.625em;
 }
@@ -282,8 +272,7 @@ small {
   line-height: 0.75em;
 }
 /* @group Lists */
-ol,
-ul {
+ol, ul {
   margin-left: 21px;
 }
 ol {
@@ -308,14 +297,12 @@ table {
 caption {
   display: none;
 }
-th,
-td {
+th, td {
   border-bottom: 1px solid #333;
   border-right: 1px solid #333;
   padding: 10px 10px;
 }
-th,
-tfoot td {
+th, tfoot td {
   font-weight: bold;
   text-align: center;
 }
@@ -323,8 +310,7 @@ table.hasfooter tfoot td {
   border-bottom: 0;
   padding-bottom: 11px;
 }
-th:last-child,
-td:last-child {
+th:last-child, td:last-child {
   border-right: 0;
 }
 table .hidden {
@@ -366,7 +352,6 @@ dd {
 .button:active {
   padding-bottom: 7px;
   margin-bottom: 13px;
-  position: relative;
   top: 1px;
 }
 form {
@@ -378,7 +363,7 @@ form aside {
   font-size: 0.75em;
   line-height: 0.75em;
   font-variant: small-caps;
-  margin: 1px 0 21px -4px;
+  padding-bottom: 12px;
   text-align: center;
 }
 form .secondary {
@@ -387,22 +372,26 @@ form .secondary {
 }
 form > ol {
   list-style: none;
-  /* debug */
-
-  width: 300px;
+  margin: 0;
 }
 form > ol li {
-  position: relative;
+  padding-bottom: 21px;
 }
-input,
-textarea,
-select {
+input, textarea, select {
   background: none;
   border: 1px solid #333;
   border-radius: 2px;
-  margin: -4px 0 16px -4px;
+  margin: 16px 0 16px 0;
   padding: 4px;
   width: 100%;
+}
+input[type=checkbox], input[type=radio] {
+  background: inherit;
+  border: 0;
+  margin: 21px 16px 14px 2px;
+  padding: 1px 0 0;
+  vertical-align: baseline;
+  width: auto;
 }
 input[type=submit] {
   width: auto;
@@ -421,16 +410,18 @@ select.disabled {
   color: #aaa;
 }
 /* @group Labels */
-label {
+label, .label {
   display: block;
   font-weight: bold;
-  margin: 10px 0;
+}
+label.inline, .label.inline {
+  font-weight: normal;
 }
 /* @group Inlined Labels */
 label.inlined {
   color: #666;
   font-weight: normal;
-  margin: 0;
+  padding: 21px 0 0 0;
   opacity: 0;
   position: absolute;
   right: 20px;
@@ -454,6 +445,15 @@ label.inlined {
   vertical-align: bottom;
 }
 /* @end */
+/* @group Notifications */
+.note {
+  background-color: rgba(126, 126, 205, 0.52);
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 21px;
+  width: 100%;
+}
+/* @end */
 /* @end */
 /* @group Layout & GS */
 /* @group Clearfix */
@@ -461,8 +461,7 @@ label.inlined {
 .cf {
   zoom: 1;
 }
-.cf:before,
-.cf:after {
+.cf:before, .cf:after {
   content: "";
   display: table;
 }
@@ -489,8 +488,7 @@ body {
   clear: both;
   zoom: 1;
 }
-.grids:before,
-.grids:after {
+.grids:before, .grids:after {
   content: "";
   display: table;
 }
@@ -617,9 +615,7 @@ body {
 .debug #wrapper {
   background: rgba(137, 135, 243, 0.1);
 }
-.debug input,
-.debug textarea,
-.debug select {
+.debug input, .debug textarea, .debug select {
   background-color: rgba(137, 135, 243, 0.1);
 }
 .debug .button {
@@ -631,6 +627,5 @@ body {
 }
 .debug [class^="grid-"] {
   background: rgba(137, 135, 243, 0.2);
-  margin-bottom: 21px;
 }
 /* @end */

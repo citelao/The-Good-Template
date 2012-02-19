@@ -13,6 +13,7 @@ table, caption, tbody, textarea, tfoot, thead, tr, th, td {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	position: relative;
 	border: 0;
 	outline: 0;
 	font-weight: inherit;
@@ -156,7 +157,6 @@ a {
 	}
 	
 	&:active {
-		position: relative;
 		top: 1px;
 	}
 	
@@ -195,7 +195,6 @@ big {
 }
 
 blockquote {
-	margin-left: -10px;
 	padding-left: 22px;
 	border-left: 10px solid #999;
 }
@@ -204,17 +203,17 @@ blockquote {
 		color: #999;
 		
 		&:before {
-			content: "—";
+			content: " —";
 		}
 	}
 
 code {
 	border-radius: 2px;
 	color: #93a1a1;
-/*	font-family: Menlo, monospace;*/
+	font-family: Menlo, monospace;
 /*	font-size: 16px;*/
-/*	margin: -4px 0;
-	padding: 4px;*/
+	margin: -4px 0;
+	padding: 4px;
 	-moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
 	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
@@ -372,7 +371,6 @@ dd {
 	&:active {
 		padding-bottom: 7px;
 		margin-bottom: 13px;
-		position: relative;
 		top: 1px;
 	}
 	
@@ -389,7 +387,7 @@ form {
 		display: block;
 		.typographize(@small-size, inline);
 		font-variant: small-caps;
-		margin: 1px 0 21px -4px;
+		padding-bottom: 12px;
 		text-align: center;
 	}
 	
@@ -401,12 +399,10 @@ form {
 
 form > ol {
 	list-style: none;
-	
-	/* debug */
-	width: 300px;
+	margin: 0;
 	
 	li {
-		position: relative;
+		padding-bottom: 21px;
 	}
 }
 
@@ -416,10 +412,20 @@ select {
 	background: none;
 	border: 1px solid #333;
 	border-radius: 2px;
-	margin: -4px 0 16px -4px;
+	margin: 16px 0 16px 0;
 	padding: 4px;
 	width: 100%;
 }
+
+	input[type=checkbox],
+	input[type=radio] {
+		background: inherit;
+		border: 0;
+		margin: 21px 16px 14px 2px;
+		padding: 1px 0 0;
+		vertical-align: baseline;
+		width: auto;
+	}
 
 	input[type=submit] {
 		width: auto;
@@ -443,18 +449,22 @@ select {
 
 /* @group Labels */
 
-label {
-	display: block;
-	font-weight: bold;
-	margin: 10px 0;
-}
+	label,
+	.label {
+		display: block;
+		font-weight: bold;
+		
+		&.inline {
+			font-weight: normal;
+		}
+	}
 
 	/* @group Inlined Labels */
 	
 	label.inlined {
 		color: #666;
 		font-weight: normal;
-		margin: 0;
+		padding: 21px 0 0 0;
 		opacity: 0;
 		position: absolute;
 		right: 20px;
@@ -482,6 +492,16 @@ label {
 :-moz-placeholder  {
 	vertical-align: bottom;
 }
+/* @end */
+
+/* @group Notifications */
+	.note {
+		background-color: rgba(126, 126, 205, 0.52);
+		border-radius: 2px;
+		text-align: center;
+		margin-bottom: 21px;
+		width: 100%;
+	}
 /* @end */
 /* @end */
 
@@ -636,6 +656,5 @@ body {
 
 .debug [class^="grid-"]{
 	background: rgba(137, 135, 243, 0.2);
-	margin-bottom: 21px; //TODO Remove
 }
 /* @end */

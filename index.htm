@@ -246,42 +246,57 @@
 					    
 		<section id="contact">
 			<h3>Contact.</h3>
-			<div class="box error">This is an error.</div>
-			<div class="box info">This is information.</div>
-			<div class="note success">This is success.</div>
-			<div class="note warning">This is a warning.</div>
 			
 			
-			<form action="javascript:void(0)">
-				<ol>
+			<form action="javascript:void(0)" class="cf">
+				<ol class="grid-4">
+					<div class="note error">This is an error.</div>
+					<div class="note info">This is information.</div>
+					<div class="note success">This is success.</div>
+					<div class="note warning">This is a warning.</div>
 					<li>
-						<label for="name">name:</label>
+						<label for="name" class="main">name:</label>
 						<label for="name" class="inlined">name</label>
 						<input type="text" placeholder="John Smith" id="name" />
 					</li>
 					
 					<li>
-						<label for="name">email:</label>
+						<label for="name" class="main">email:</label>
 						<label for="email" class="inlined">email</label>
 						<input type="text" placeholder="john@smith.com" id="email" />
 						<aside>(so I can spam you)</aside>
 					</li>
 					
 					<li>
-						<label for="tone">regarding:</label>
+						<label for="tone" class="main">regarding:</label>
 						<select name="tone" id="tone">
-							<option value="" disabled>Choose your primary emotion.</option>
+							<option value="" disabled selected>Choose your primary emotion.</option>
 							<option value="hate">Hate</option>
 							<option value="love">Love</option>
 						</select>
-						<aside>Still have to style <!--<code>&lt;select></code>--></aside>
+						<aside>Still have to style <code>&lt;select></code></aside>
 					</li>
 					
 					<li>
-						<label for="name">message:</label>
+						<label for="name" class="main">message:</label>
 						<label for="email" class="inlined">message</label>
 						<textarea name="" id="" placeholder="I love/hate your site!" cols="30" rows="10"></textarea>
 					</li>
+					
+					<li>
+						<div class="label">spam me?</div>
+						<label for="spam-plz" class="inline"><input type="radio" name="spam" id="spam-plz" value="please" checked />Yes</label>
+						<label for="spam-oh-plz" class="inline"><input type="radio" name="spam" id="spam-oh-plz" value="oh please" />Oh, yes!</label>
+						<aside>Muahaha!</aside>
+					</li>
+					
+					<li>
+						<div class="label">Do you like:</div>
+						<label for="cheese" class="inline"><input type="checkbox" name="cheese" id="cheese" />Cheese?</label>
+						<label for="pickles" class="inline"><input type="checkbox" name="pickles" id="pickles" />Pickles?</label>
+						<aside>Yum!</aside>
+					</li>
+					
 					
 					<li>
 						<input type="submit" value="Mail" class="button" data-icon="" onclick="javascript:void(0)" />
