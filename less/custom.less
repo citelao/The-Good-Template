@@ -1,0 +1,72 @@
+body {
+	background-color: #eee;
+}
+
+@font-face {
+	font-family: 'zocial';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../asset/zocial-regular-webfont.eot');
+	src: url('../asset/zocial-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../asset/zocial-regular-webfont.woff') format('woff'),
+		url('../asset/zocial-regular-webfont.ttf') format('truetype'),
+		url('../asset/zocial-regular-webfont.svg#ZocialRegular') format('svg');
+}
+
+.continuity {
+	border-radius: 4px 4px 4px 0;
+}
+
+	a {
+		color: rgb(20, 130, 200);
+	}
+
+	nav li {
+		padding: 0 .5em;
+		border-right: 1px solid #aaa;
+		
+		&:last-child {
+			border: 0;
+		}
+	}
+
+	#main > section {
+		padding-top: 42px;
+	}
+	
+	.block-image {
+		float:left;
+		.continuity;
+		max-width: 100%;
+	}
+	
+	.social {
+		overflow: hidden;
+		background: #333;
+		.continuity;
+		display: inline-block;
+		margin: 0 10px 10px 0;
+		padding: 10px;
+		
+		span {
+			display: none;
+			text-indent: -999em;
+		}
+		
+		&:before {
+			content: attr(data-icon);
+			color: #eee;
+			text-shadow: 0 1px 0px #000;
+			font-family: zocial;
+		}
+		
+		&:hover {
+			text-decoration: none;
+			background: #444;
+		}
+	}
+	
+footer {
+	border-top: 1px solid #aaa1;
+	text-align: center;
+}

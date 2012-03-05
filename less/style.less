@@ -29,7 +29,7 @@ header, section {
 }
 
 :focus {
-	outline: 0;
+	outline: dotted;
 }
 
 body {
@@ -75,8 +75,8 @@ blockquote, q {
 @hope-pixel-height: 16;
 
 // Arbitrary.
-@h1-size: 3.75; //60px
-@h2-size: 2.5; //40px
+@h1-size: 2; //32px
+@h2-size: 1.75; //28px
 @h3-size: 1.25; //20px
 @h4-size: 1; //16px
 
@@ -117,13 +117,13 @@ blockquote {
 
 /* @group Headers */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-h7 {
+h1, .alpha,
+h2, .beta,
+h3, .gamma,
+h4, .delta,
+h5, .epsilon,
+h6, .zeta,
+h7, .eta {
 	font-weight: bold;
 	
 	& > strong {
@@ -131,20 +131,19 @@ h7 {
 	}
 }
 
-h1 {
+h1, .alpha {
 	.typographize(@h1-size, pad);
 }
 
-h2 {
+h2, .beta {
 	.typographize(@h2-size, pad);}
 
-h3 {
+h3, .gamma {
 	.typographize(@h3-size, pad);
 }
 
-h4 {
+h4, .delta {
 	.typographize(@h4-size, pad);
-	font-variant: small-caps;
 }
 
 /* @end */
@@ -237,6 +236,23 @@ del {
 	}
 }
 
+.ir {
+	display: block;
+	border: 0;
+	text-indent: -999em;
+	overflow: hidden;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+	
+	*line-height:0;
+	
+	br {
+		display: none;
+	}
+}
+
 kbd {
 	border-top: 2px outset;
 	border-left: 2px outset;
@@ -280,6 +296,11 @@ ul {
 	
 	ul {
 		list-style: square;
+		
+		&.unmarked {
+			list-style: none;
+			margin-left: 0;
+		}
 	}
 	
 	ul ul,
@@ -550,24 +571,43 @@ body {
 	
 	[class^="grid-"]{
 		float:left;
+		padding: 0 10px 0 0;
 		width: 100%;
 	}
 	
 	/* Allow nested grids: */
-	[class^="grid-"] .grids{
+	[class^="grid-"] .grids {
 		width:auto;
-		margin:0 -2.083%; //TODO fix
+		padding: 0;
+		margin:0 -10px;
 	}
 	
 	.gridify(@columns) { width: @column-width * @columns - @column-margin; }
 	
-	#site-nav {
+	#site-nav {	
 		ul {
 			margin-left: 0;
 		}
 	
 		li {
-			display: inline;
+			display: block;
+			
+			a {
+				display: block;
+				padding: 5px;
+			}
+		}
+	}
+	
+	.to-nav {
+		position: absolute;
+		float: right;
+		top: 15px;
+		right: 20px;
+		
+		&:active {
+			position: absolute;
+			top: 16px;
 		}
 	}
 /* @end */
@@ -603,6 +643,26 @@ body {
 	.grid-10 { .gridify(10) }
 	.grid-11 { .gridify(11) }
 	.grid-12 { .gridify(12) }
+	
+	#site-nav {
+		float:  right;
+		
+		position: absolute;
+		top:  15px;
+		right: 20px;
+		
+		li {
+			display: inline;
+			
+			a {
+				display: inline;
+			}
+		}
+	}
+	
+	.to-nav {
+		display: none;
+	}
 }
 
 

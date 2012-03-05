@@ -83,7 +83,7 @@ header, section {
   display: block;
 }
 :focus {
-  outline: 0;
+  outline: dotted;
 }
 body {
   line-height: 1.0;
@@ -134,43 +134,56 @@ blockquote {
 }
 /* @group Headers */
 h1,
+.alpha,
 h2,
+.beta,
 h3,
+.gamma,
 h4,
+.delta,
 h5,
+.epsilon,
 h6,
-h7 {
+.zeta,
+h7,
+.eta {
   font-weight: bold;
 }
 h1  > strong,
+.alpha  > strong,
 h2  > strong,
+.beta  > strong,
 h3  > strong,
+.gamma  > strong,
 h4  > strong,
+.delta  > strong,
 h5  > strong,
+.epsilon  > strong,
 h6  > strong,
-h7  > strong {
+.zeta  > strong,
+h7  > strong,
+.eta  > strong {
   font-variant: small-caps;
 }
-h1 {
-  font-size: 3.75em;
-  line-height: 1.05;
-  padding-bottom: 0.35em;
+h1, .alpha {
+  font-size: 2em;
+  line-height: 1.3125;
+  padding-bottom: 0.65625em;
 }
-h2 {
-  font-size: 2.5em;
-  line-height: 1.05;
-  padding-bottom: 0.525em;
+h2, .beta {
+  font-size: 1.75em;
+  line-height: 1.5;
+  padding-bottom: 0.75em;
 }
-h3 {
+h3, .gamma {
   font-size: 1.25em;
   line-height: 1.05;
   padding-bottom: 1.05em;
 }
-h4 {
+h4, .delta {
   font-size: 1em;
   line-height: 1.3125;
   padding-bottom: 1.3125em;
-  font-variant: small-caps;
 }
 /* @end */
 a {
@@ -246,6 +259,20 @@ del:hover {
   text-decoration: none;
   -webkit-transition: color 0.2s ease-in-out;
 }
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+  *line-height: 0;
+}
+.ir br {
+  display: none;
+}
 kbd {
   border-top: 2px outset;
   border-left: 2px outset;
@@ -280,6 +307,10 @@ ol {
 }
 ul {
   list-style: square;
+}
+ul.unmarked {
+  list-style: none;
+  margin-left: 0;
 }
 ul ul,
 ul ol,
@@ -497,18 +528,34 @@ body {
 }
 [class^="grid-"] {
   float: left;
+  padding: 0 10px 0 0;
   width: 100%;
 }
 /* Allow nested grids: */
 [class^="grid-"] .grids {
   width: auto;
-  margin: 0 -2.083%;
+  padding: 0;
+  margin: 0 -10px;
 }
 #site-nav ul {
   margin-left: 0;
 }
 #site-nav li {
-  display: inline;
+  display: block;
+}
+#site-nav li a {
+  display: block;
+  padding: 5px;
+}
+.to-nav {
+  position: absolute;
+  float: right;
+  top: 15px;
+  right: 20px;
+}
+.to-nav:active {
+  position: absolute;
+  top: 16px;
 }
 /* @end */
 @media screen and (min-width: 480px) {
@@ -564,6 +611,21 @@ body {
   }
   .grid-12 {
     width: 650px;
+  }
+  #site-nav {
+    float: right;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  #site-nav li {
+    display: inline;
+  }
+  #site-nav li a {
+    display: inline;
+  }
+  .to-nav {
+    display: none;
   }
 }
 @media screen and (min-width: 980px) {
