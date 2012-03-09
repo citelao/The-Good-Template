@@ -1,6 +1,6 @@
 # The Good Template #
 
-Version 0.3
+Version 0.4
 
 The basis of everything I do.
 
@@ -35,3 +35,9 @@ credit it when I can, but just in case:
 
 Besides, since I plan on using this as the basis for *all*
 my design projects, I hope it's as good as possible.
+
+## How to ##
+
+Everything is set up for you: `.less` files, basic `.html` 
+files, everything. Just fork it or download it and get to
+work.
