@@ -1,5 +1,5 @@
 body {
-	background-color: #eee;
+	background-color: hsl(200, 30%, 95%);
 }
 
 @font-face {
@@ -19,6 +19,10 @@ body {
 
 	a {
 		color: rgb(20, 130, 200);
+		
+		&:hover {
+			border-bottom: 1px solid rgb(20, 130, 200);
+		}
 	}
 
 	nav li {
@@ -31,13 +35,24 @@ body {
 	}
 
 	#main > section {
-		padding-top: 42px;
+		padding-bottom: 42px;
+		
+		&:first-child {
+			padding-top: 21px;
+		}
 	}
 	
 	.block-image {
 		float:left;
 		.continuity;
 		max-width: 100%;
+		
+		.cf;
+	}
+	
+	.moar {
+		display: inline-block;
+		margin: 21px auto inherit auto;
 	}
 	
 	.social {
