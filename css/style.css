@@ -671,7 +671,7 @@ body {
   }
 }
 /* @end */body {
-  background-color: #eef4f6;
+  background: url('../img/all/bg-small.png'), #eef4f6;
 }
 @font-face {
   font-family: 'zocial';
@@ -715,9 +715,9 @@ nav li:last-child {
 .block-image:after {
   clear: both;
 }
-.moar {
+.meta {
   display: inline-block;
-  margin: 21px auto inherit auto;
+  top: -21px;
 }
 .social {
   overflow: hidden;
@@ -740,6 +740,11 @@ nav li:last-child {
 .social:hover {
   text-decoration: none;
   background: #444;
+}
+@media screen and (min-width: 680px) and (max-width: 980px) {
+  .social {
+    padding: 5px;
+  }
 }
 footer {
   border-top: 1px solid #aaa1;

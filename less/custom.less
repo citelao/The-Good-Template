@@ -1,5 +1,5 @@
 body {
-	background-color: hsl(200, 30%, 95%);
+	background: url('../img/all/bg-small.png'), hsl(200, 30%, 95%);
 }
 
 @font-face {
@@ -50,9 +50,9 @@ body {
 		.cf;
 	}
 	
-	.moar {
+	.meta {
 		display: inline-block;
-		margin: 21px auto inherit auto;
+		top: -21px;
 	}
 	
 	.social {
@@ -78,6 +78,12 @@ body {
 		&:hover {
 			text-decoration: none;
 			background: #444;
+		}
+	}
+	
+	@media screen and (min-width: 680px) and (max-width: 980px) {
+		.social {
+			padding: 5px;
 		}
 	}
 	
