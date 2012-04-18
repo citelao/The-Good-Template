@@ -16,8 +16,9 @@
 	<meta http-equiv="cleartype" content="on">
 	
 	<link rel="author" href="humans.txt" />
-	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/zocial.css" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" />
 	<!-- TODO Fallback -->
 	<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/solarized_dark.min.css">
 	
@@ -39,8 +40,17 @@
 	<a href="#site-nav" class="to-nav">Menu</a>
 	
 	<div id="main" role="main" class="grids">
-		<section class="grid-12 block">
-			<a href="#"><img src="img/all/Hi-Header.png" class="block-image" /></a>
+		<section class="grid-12 flexslider" id="sldes">
+			<ul class="slides">
+				<li>
+					<a href="#">
+						<img src="img/all/Hi-Header.png" class="block-image" />
+					</a>
+				</li>
+				<li>
+					<img src="img/all/1913-Header.png" class="block-image" />
+				</li>
+			</ul>
 		</section>
 		
 		<section class="grid-4">
@@ -48,10 +58,11 @@
 		</section>
 		
 		<section class="grid-8">			
-			<h2>Why, hello there.</h2>
+			<h2>Do you like pie?</h2>
 			<p>
-				My name is <strong>Ben Stolovitz</strong>, and I design
-				websites and Mac apps.
+				I don't, but if you do, it doesn't matter, I'll work with you. 
+				My name is <strong>Ben Stolovitz</strong>, and I design websites 
+				with the windows open, the music up, and the computer (generally) on.
 			</p>
 			<p>
 				I'm a high school junior who loves recording, designing,
@@ -88,10 +99,24 @@
 	
 	<script src="https://www.google.com/jsapi"></script>
 	<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+	<script src="js/jquery-1.5.2.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="js/slides.min.jquery.js"></script>
 	
 	<script>
-		google.load("jquery", "1.7.1");
-		window.jQuery || document.write('<script src="js/jquery-1.5.2.min.js">\x3C/script>')
+//		google.load("jquery", "1.7.1");
+//		window.jQuery || document.write('<script src="js/jquery-1.5.2.min.js">\x3C/script>')
+//		
+		$(function(){
+		    $("#slides").slides({
+		    	generateNextPrev: false,
+		    	generatePagination: false
+		    });
+		  });
+		  
+		  $(window).load(function() {
+		  	$('.flexslider').flexslider();
+		  });
 	</script>
 	
 	<script src="js/main.js"></script>
