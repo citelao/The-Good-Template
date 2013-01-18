@@ -12,7 +12,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- add `, user-scalable=no` if you want no scalability on mobile -->
 	<meta http-equiv="cleartype" content="on">
 	
 	<link rel="author" href="humans.txt" />
@@ -40,17 +40,19 @@
 	<a href="#site-nav" class="to-nav">Menu</a>
 	
 	<div id="main" role="main" class="grids">
-		<section class="grid-12 flexslider" id="sldes">
-			<ul class="slides">
-				<li>
-					<a href="#">
-						<img src="img/all/Hi-Header.png" class="block-image" />
-					</a>
-				</li>
-				<li>
-					<img src="img/all/1913-Header.png" class="block-image" />
-				</li>
-			</ul>
+		<section class="grid-12" id="sldes">
+			<div class="flexslider">
+				<ul class="slides">
+					<li>
+						<a href="#">
+							<img src="img/all/Hi-Header.png" class="block-image" />
+						</a>
+					</li>
+					<li>
+						<img src="img/all/1913-Header.png" class="block-image" />
+					</li>
+				</ul>
+			</div>
 		</section>
 		
 		<section class="grid-4">
