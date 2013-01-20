@@ -1,7 +1,8 @@
 /* @group Table */
+
 	table {
-		margin: 5px;
-		padding: 6px 5px 5px;
+		margin: (@line * .5) (@line * .5) (@line * .5 + @single-size);
+		padding-top: @line * .5;
 	}
 	
 	caption {
@@ -9,9 +10,9 @@
 	}
 	
 	th, td {
-		border-bottom: 1px solid #333;
-		border-right: 1px solid #333;
-		padding: 10px 10px;
+		border-bottom: @single-size solid #333;
+		border-right: @single-size solid #333;
+		padding: @line * .5;
 	}
 	
 		th,
@@ -22,7 +23,7 @@
 		
 		table.hasfooter tfoot td {
 			border-bottom: 0;
-			padding-bottom: 11px;
+			padding-bottom: @line * .5;
 		}
 		
 		th:last-child,
@@ -42,7 +43,7 @@ dt {
 }
 
 dd {
-	margin-left: 21px;
+	margin-left: @line;
 }
 /* @end */
 
@@ -54,6 +55,7 @@ dd {
 	background: -webkit-gradient(linear, left top, left bottom, from(@buttonColor), to(darken(@buttonColor, 5%))) @buttonColor;
 	border-radius: 5px;
 	border: 1px solid darken(@buttonColor, 20%);
+	border-bottom-width: 2px;
 	-moz-box-shadow: inset 0 1px 0 lighten(@buttonColor, 20%);
 	-webkit-box-shadow: inset 0 1px 0 lighten(@buttonColor, 20%);
 	box-shadow: inset 0 1px 0 lighten(@buttonColor, 20%);
@@ -62,7 +64,7 @@ dd {
 	display: inline;
 	text-shadow: 0 -1px 0 darken(@buttonColor, 20%);
 	margin: 12px 0;
-	padding: 8px;
+	padding: 7px;
 	-webkit-transition: background-color 0.2s ease-in-out 0s;
 	
 	&:hover {
@@ -74,8 +76,8 @@ dd {
 	}
 	
 	&:active {
-		padding-bottom: 7px;
 		margin-bottom: 13px;
+		border-bottom-width: 1px;
 		top: 1px;
 	}
 	
@@ -92,13 +94,13 @@ form {
 		display: block;
 		.typographize(@small-size, inline);
 		font-variant: small-caps;
-		padding-bottom: 12px;
+		padding: (@line * .5) 0;
 		text-align: center;
 	}
 	
 	.secondary {
 		float: right;
-		padding-top: 21px;
+		padding-top: @line;
 	}
 }
 
@@ -107,7 +109,7 @@ form > ol {
 	margin: 0;
 	
 	li {
-		padding-bottom: 21px;
+		padding-bottom: @line;
 	}
 }
 
@@ -115,20 +117,17 @@ input,
 textarea,
 select {
 	background: none;
-	border: 1px solid #333;
+	border: @single-size solid #333;
 	border-radius: 2px;
-	margin: 16px 0 16px 0;
-	padding: 4px;
+	margin: (@line * .8 - @single-size) 0 (@line * .8);
+	padding: (@line * .2);
 	width: 100%;
 }
 
 	input[type=checkbox],
 	input[type=radio] {
-		background: inherit;
-		border: 0;
-		margin: 21px 16px 14px 2px;
-		padding: 1px 0 0;
-		vertical-align: baseline;
+		margin: (@line * 1.1 + @single-size) (@line * .8) (0) (@line * .2);
+		padding: 0;
 		width: auto;
 	}
 
@@ -137,12 +136,12 @@ select {
 	}
 
 	textarea {
-		margin-bottom: 11px;
+		margin-bottom: (@line * .5 + @single-size);
 	}
 	
 	select {
 		background: url('../img/all/arrow.png') no-repeat right center, transparent;
-		font-size: @base-font;
+		font-size: 1rem;
 		line-height: @line-height;
 		-webkit-appearance: button;
 		
@@ -204,7 +203,8 @@ select {
 		background-color: rgba(126, 126, 205, 0.52);
 		border-radius: 2px;
 		text-align: center;
-		margin-bottom: 21px;
+		margin-bottom: @line;
+		padding: (@line * .5) 0;
 		width: 100%;
 	}
 /* @end */

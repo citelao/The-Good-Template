@@ -2,34 +2,19 @@
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
 
-/* We want each line to be 21px, font size 16 */
-
-@base-font: 1em;
-@line-height: 1.3125;
-
-// Arbitrary.
-@h1-size: 2; //32px
-@h2-size: 1.75; //28px
-@h3-size: 1.25; //20px
-@h4-size: 1; //16px
-
-@big-size: 1.125; //18px
-@small-size: 0.75; //12px
-@sub-size: 0.625; //10px
-
 .typographize(@size, pad) {
-	font-size: @size * @base-font;
+	font-size: @size * 1rem;
 	line-height: ceil(@size / @line-height)  * @line-height / @size;
-	padding-bottom: @base-font * @line-height / @size;
+	margin-bottom: @line;
 }
 
 .typographize(@size, inline) {
-	font-size: @size * @base-font;
-	line-height: @size * @base-font;
+	font-size: @size * 1rem;
+	line-height: 0;
 }
 
 body {
-	font: @base-font ~"/" @line-height Arial, sans-serif;
+	font: 1rem ~"/" @line-height Arial, sans-serif;
 }
 
 h5,
@@ -41,11 +26,11 @@ p,
 pre,
 table,
 ul {
-	padding-bottom: @line-height * @base-font;
+	padding-bottom: @line;
 }
 
 blockquote {
-	margin-bottom: @line-height * @base-font;
+	margin-bottom: @line;
 }
 
 /* @group Headers */
@@ -85,11 +70,11 @@ a {
 	text-decoration: none;
 	
 	&:hover {
-		border-bottom: 1px solid #333;
+		border-bottom: @single-size solid #333;
 	}
 	
 	&:active {
-		top: 1px;
+		top: @single-size;
 	}
 	
 	&:focus {
@@ -99,7 +84,7 @@ a {
 
 /* @group Tooltips */
 	.tooltip {
-		border-bottom: 1px dotted;
+		border-bottom: @single-size dotted;
 		cursor: pointer;
 	}
 	
@@ -108,17 +93,17 @@ a {
 			content: attr(title);
 			
 			background: rgba(0,0,0,.8);
-			border-radius: 5px;
+			border-radius: .3125rem;
 			color: #fff;
 			position: absolute;
 			text-decoration: none;
-			margin: -5px 5px;
-			padding: 5px;
+			margin: -.3125rem .3125rem;
+			padding: .3125rem;
 		}
 /* @end */
 
 acronym {
-	border-bottom: 1px dotted #333;
+	border-bottom: @single-size dotted #333;
 	cursor: help;
 }
 
@@ -127,11 +112,11 @@ big {
 }
 
 blockquote {
-	padding-left: 22px;
-	border-left: 10px solid #999;
+	padding-left: @line * .6;
+	border-left: @line * .4 solid #999;
 }
 
-	blockquote > cite {
+	blockquote > small {
 		color: #999;
 		
 		&:before {
@@ -140,21 +125,20 @@ blockquote {
 	}
 
 code {
-	border-radius: 2px;
+	border-radius: .125rem;
 	color: #93a1a1;
 	font-family: Menlo, monospace;
-/*	font-size: 16px;*/
-	margin: -4px 0;
-	padding: 4px;
-	-moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
-	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+	margin: .25rem 0;
+	padding: .25rem;
+	-moz-box-shadow: inset 0 0 @single-size rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: inset 0 0 @single-size rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0 0 @single-size rgba(0, 0, 0, 0.5);
 	background-color: #002b36;
 }
 
 	pre > code {
 		display: block;
-		margin: 13px 16px -4px -4px;
+		margin: .8125rem 0;
 		overflow-x: scroll;
 	}
 
@@ -204,7 +188,6 @@ sup {
 }
 
 	sub {
-		top: 5px;
 		vertical-align: sub;
 	}
 	
@@ -220,7 +203,7 @@ small {
 
 ol,
 ul {
-	margin-left: 21px;
+	margin-left: @line;
 }
 
 	ol {

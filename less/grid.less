@@ -21,40 +21,16 @@
 
 /* How the layouts work 
 	
-	320-480px - fluid mobile
-	480-660px - fixed mobile
-	660-960px - small desktop
-	960-infin - desktop
+	20rem-42rem - fixed mobile
+	42rem-60rem - small desktop
+	60rem-infin - desktop
 */
 
-/* @group Basic (320px) */
+/* @group Basic (<30rem) */
 body {
-	width: 90%;
-	margin: 20px auto -20px;
-	min-width: 320px;
+	margin: 1.3125rem auto;
+	min-width: 20rem;
 }
-	
-	/* stolen from inuit.css */
-	.grids {
-		list-style:none;
-		clear:both;
-		.cf;
-	}
-	
-	[class^="grid-"]{
-		float:left;
-		padding: 0 10px 0 0;
-		width: 100%;
-	}
-	
-	/* Allow nested grids: */
-	[class^="grid-"] .grids {
-		width:auto;
-		padding: 0;
-		margin:0 -10px;
-	}
-	
-	.gridify(@columns) { width: @column-width * @columns - @column-margin; }
 	
 	#site-nav {	
 		ul {
@@ -66,7 +42,7 @@ body {
 			
 			a {
 				display: block;
-				padding: 5px;
+				padding: .3125rem;
 			}
 		}
 	}
@@ -74,32 +50,52 @@ body {
 	.to-nav {
 		position: absolute;
 		float: right;
-		top: 15px;
-		right: 20px;
+		top: @line;
+		right: 1.5rem;
 		
 		&:active {
 			position: absolute;
-			top: 16px;
+			top: (@line + @single-size);
 		}
 	}
 /* @end */
 
-@media screen and (min-width: 480px) {
-	body {
-		width: 440px;
+.gridify(@columns) { width: @column-width * @columns - @column-margin; }
+
+@media screen and (min-width: 42rem) {
+	/* stolen from inuit.css */
+	.grids {
+		list-style:none;
+		clear:both;
+		.cf;
+		margin-left: -1.5rem;
+		overflow: hidden;
+		width: 100%;
 	}
-}
-
-@media screen and (min-width: 680px) {
-	.grids { margin: 0 0 0 -10px; }
 	
-	[class^="grid-"] { margin: 0 10px 0 0;	
-		.grids & { margin:0 0 0 10px; } }
+	[class^="grid-"]{
+		float:left;
+		margin: 0 0 0 1.5rem;
+		padding: 0 1.5rem;
+		width: 100%;
+	}
+	
+	/* Allow nested grids: */
+	[class^="grid-"] .grids {
+		width:auto;
+		padding: 0;
+		margin-left: -1.5rem;
+	}
 
-	@body-width: 660px;
+	.grids { margin: 0 0 0 -1.5rem; }
+	
+	[class^="grid-"] { margin: 0 0 0 1.5rem;	
+		/* .grids & { margin:0 0 0 10px; } */ } 
+
+	@body-width: 40rem;
 	@total-columns: 12;
 	@column-width: @body-width/@total-columns;
-	@column-margin: 10px;
+	@column-margin: 1.5rem;
 
 	body { width: @body-width; }
 	
@@ -120,8 +116,8 @@ body {
 		float:  right;
 		
 		position: absolute;
-		top:  15px;
-		right: 20px;
+		top:  @line;
+		right: 1.5rem;
 		
 		li {
 			display: inline;
@@ -137,12 +133,11 @@ body {
 	}
 }
 
-
-@media screen and (min-width: 980px) {
-	@body-width: 960px;
+@media screen and (min-width: 60rem) {
+	@body-width: 58rem;
 	@total-columns: 12;
 	@column-width: @body-width/@total-columns;
-	@column-margin: 10px;
+	@column-margin: 1.5rem;
 	
 	body { width: @body-width; }
 	
@@ -159,5 +154,27 @@ body {
 	.grid-11 { .gridify(11) }
 	.grid-12 { .gridify(12) }
 }
+
+/* @media screen and (min-width: 75rem) {
+	@body-width: 73rem;
+	@total-columns: 12;
+	@column-width: @body-width/@total-columns;
+	@column-margin: 1.5rem;
+
+	body { width: @body-width; }
+
+	.grid-1  { .gridify( 1) }
+	.grid-2  { .gridify( 2) }
+	.grid-3  { .gridify( 3) }
+	.grid-4  { .gridify( 4) }
+	.grid-5  { .gridify( 5) }
+	.grid-6  { .gridify( 6) }
+	.grid-7  { .gridify( 7) }
+	.grid-8  { .gridify( 8) }
+	.grid-9  { .gridify( 9) }
+	.grid-10 { .gridify(10) }
+	.grid-11 { .gridify(11) }
+	.grid-12 { .gridify(12) }
+} */
 
 /* @end */
