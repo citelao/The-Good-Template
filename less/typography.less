@@ -1,12 +1,39 @@
-/* @group Typography */
-
 /* ==========================================================================
-   Rules
+   Variables
    ========================================================================== */
-   
+
 /**
-* Handle typography based on variables preset in
-*/ 
+ * LESS variables do not show up after compilation
+ * 1. Set line-height to the golden ratio. TODO Reset to 1.618
+ * 2. Add a unit to have easy access to it.
+ */
+@line-height: 1.3125; /* 1 */
+@line: @line-height * 1rem; /* 2 */
+
+/**
+ * Define .0625rem as an alternative to 1px (1px/16px = .0625)
+ */
+@single-size: .0625rem;
+
+/**
+ * Define font sizes according to the golden ratio.
+ * These are ratios used later to calculate line-height etc.
+ * All numbers calculated by dividing desired font-height by default (16px)
+ * To find desired height, multiply each ratio by 16px.
+ */
+@h1-size: 2.625;
+@h2-size: 1.625;
+@h3-size: 1.25;
+@h4-size: 1;
+
+@big-size: 1.125;
+@small-size: 0.8125;
+@sub-size: 0.625;
+
+/**
+* Handle typography based on aforementioned text-sizing variables
+* 1. Prevent breaks of baseline
+*/
 .typographize(@size, pad) {
 	font-size: @size * 1rem;
 	line-height: ceil(@size / @line-height)  * @line-height / @size;
@@ -15,31 +42,34 @@
 
 .typographize(@size, inline) {
 	font-size: @size * 1rem;
-	line-height: 0;
+	line-height: 0; /* 1 */
 }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
 
 body {
 	font: 1rem ~"/" @line-height sans-serif;
 }
 
+blockquote,
 h5,
 h6,
 h7,
 dl,
-ol,
 p,
-pre,
-table,
-ul {
+pre {
 	margin-bottom: @line;
 }
 
-blockquote {
-	margin-bottom: @line;
-}
+/* ==========================================================================
+   Headers
+   ========================================================================== */
 
-/* @group Headers */
-
+/**
+ * The first seven letters of the greek alphabet mimic headers stylistically.
+ */
 h1, .alpha,
 h2, .beta,
 h3, .gamma,
@@ -69,65 +99,13 @@ h4, .delta {
 	.typographize(@h4-size, pad);
 }
 
-/* @end */
-
-a {
-	text-decoration: none;
-	
-	&:hover {
-		border-bottom: @single-size solid #333;
-	}
-	
-	&:active {
-		top: @single-size;
-	}
-	
-	&:focus {
-		outline: thin dotted;
-	}
-}
-
-/* @group Tooltips */
-	.tooltip {
-		border-bottom: @single-size dotted;
-		cursor: pointer;
-	}
-	
-		.tooltip:hover:after,
-		acronym:hover:after {
-			content: attr(title);
-			
-			background: rgba(0,0,0,.8);
-			border-radius: .3125rem;
-			color: #fff;
-			position: absolute;
-			text-decoration: none;
-			margin: -.3125rem .3125rem;
-			padding: .3125rem;
-		}
-/* @end */
-
-acronym {
-	border-bottom: @single-size dotted #333;
-	cursor: help;
-}
+/* ==========================================================================
+   Inline
+   ========================================================================== */
 
 big {
 	.typographize(@big-size, inline);
 }
-
-blockquote {
-	padding-left: @line * .6;
-	border-left: @line * .4 solid #999;
-}
-
-	blockquote > small {
-		color: #999;
-		
-		&:before {
-			content: " —";
-		}
-	}
 
 code {
 	border-radius: .125rem;
@@ -147,40 +125,45 @@ code {
 		overflow-x: scroll;
 	}
 
+
+/**
+ * I've never had a use case for `del`, but whatever.
+ * 1. Grey it out.
+ * 2. Color it on hover.
+ */
 del {
-	color: rgba(1.0, 1.0, 1.0, 0.5);
+	color: rgba(1.0, 1.0, 1.0, 0.5); /* 1 */
 	-webkit-transition: color 0.2s ease-in-out;
-	
+
 	&:hover {
-		color: rgba(1.0, 1.0, 1.0, 1.0);
+		color: rgba(1.0, 1.0, 1.0, 1.0); /* 2 */
 		text-decoration: none;
 		-webkit-transition: color 0.2s ease-in-out;
 	}
 }
 
-.ir {
-	display: block;
-	border: 0;
-	text-indent: -999em;
-	overflow: hidden;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	text-align: left;
-	direction: ltr;
-	
-	*line-height:0;
-	
-	br {
-		display: none;
-	}
-}
-
+/**
+ * Make `kbd` look like a keyboard key. CUTE!
+ */
 kbd {
 	border-top: 2px outset;
 	border-left: 2px outset;
 	border-right: 3px outset;
 	border-bottom: 4px outset;
 	border-radius: 4px;
+}
+
+ins {
+	text-decoration: none;
+	border-bottom: @single-size solid;
+}
+
+/**
+ * In the absence of a semantic way of doing hanging punctuation, remove quotes
+ */
+q:after,
+q:before {
+	content: '';
 }
 
 strong {
@@ -195,7 +178,7 @@ sup {
 	sub {
 		vertical-align: sub;
 	}
-	
+
 	sup {
 		vertical-align: super;
 	}
@@ -204,33 +187,116 @@ small {
 	.typographize(@small-size, inline);
 }
 
-/* @group Lists */
+
+/* ==========================================================================
+   Block-level
+   ========================================================================== */
+
+blockquote {
+	margin-left: 0;
+	padding-left: @line * .6;
+	border-left: @line * .4 solid #999;
+}
+
+	blockquote > small {
+		color: #999;
+
+		&:before {
+			content: " —";
+		}
+	}
+
+.ir {
+	display: block;
+	border: 0;
+	text-indent: -999em;
+	overflow: hidden;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+
+	*line-height:0;
+
+	br {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * 1. Use a bottom-border for links instead of an underline. More flexible.
+ * 2. Shift the link down a bit on click.
+ */
+a {
+	text-decoration: none;
+	
+	&:hover {
+		border-bottom: @single-size solid; /* 1 */
+	}
+	
+	&:active {
+		top: @single-size; /* 2 */
+	}
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
 
 ol,
 ul {
-	margin-left: @line;
+	margin: 0 0 @line @line;
+	padding: 0;
+	
+	& ol,
+	& ul {
+		margin-bottom: 0;
+	}
 }
 
-	ol {
-		list-style: decimal;
+ol {
+	list-style: decimal;
+}
+
+/**
+ * I think square lists are classier than circles.
+ */
+ul {
+	list-style: square;
+
+	&.unmarked {
+		list-style: none;
+		margin-left: 0;
 	}
+}
+
+
+/* ==========================================================================
+   Tooltips
+   ========================================================================== */
+
+/**
+ * TODO Make it good.
+ * 1. Use a bottom-border instead of an underline. Prettier.
+ */
+acronym,
+.tooltip {
+	border-bottom: @single-size dotted; /* 1 */
+	cursor: help;
 	
-	ul {
-		list-style: square;
+	&:hover:after {
+		content: attr(title);
+		position: absolute;
 		
-		&.unmarked {
-			list-style: none;
-			margin-left: 0;
-		}
+		background: rgba(0,0,0,.8);
+		border-radius: .3125rem;
+		color: #fff;
+		margin: -.3125rem .3125rem;
+		padding: .3125rem;
+		z-index: 100;
 	}
-	
-	ul ul,
-	ul ol,
-	ol ul,
-	ol ol {
-		padding-bottom: 0;
-	}
-
-/* @end */
-
-/* @end  */
+}
