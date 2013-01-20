@@ -1,11 +1,16 @@
 /* @group Typography */
 
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
-
+/* ==========================================================================
+   Rules
+   ========================================================================== */
+   
+/**
+* Handle typography based on variables preset in
+*/ 
 .typographize(@size, pad) {
 	font-size: @size * 1rem;
 	line-height: ceil(@size / @line-height)  * @line-height / @size;
-	margin-bottom: @line;
+	margin: 0 0 @line 0;
 }
 
 .typographize(@size, inline) {
@@ -14,7 +19,7 @@
 }
 
 body {
-	font: 1rem ~"/" @line-height Arial, sans-serif;
+	font: 1rem ~"/" @line-height sans-serif;
 }
 
 h5,
@@ -26,7 +31,7 @@ p,
 pre,
 table,
 ul {
-	padding-bottom: @line;
+	margin-bottom: @line;
 }
 
 blockquote {
