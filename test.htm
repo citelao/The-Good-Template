@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html class="debug no-js" lang="en-US">
+<html class="ddebug no-js" lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<title>Ben Stolovitz</title>
@@ -32,8 +32,8 @@
 	<script src="js/modernizr-1.7.min.js" type="text/javascript"></script>
 </head>
 <body>
-<div id="wrapper">
-	<header>
+<div id="wrapper" class="grids">
+	<header class="grid-12">
 			<hgroup>
 				<h1>The Good Template</h1>
 				<h2>responsible web site framework</h2>
@@ -43,7 +43,7 @@
 		<a href="#site-nav" class="to-nav">Menu</a>
 		
 		<div id="main" role="main">
-			<section id="what">
+			<section id="what" class="grid-8">
 				<h3>What is <strong>The Good Template</strong>?</h3>
 				<p>
 					<strong>The Good Template</strong> is a responsive,
@@ -56,7 +56,7 @@
 				</p>
 			</section>
 	
-			<section id="features">
+			<section id="features" class="grid-4">
 				<h4>Features.</h4>
 	
 				<ul>
@@ -73,7 +73,7 @@
 				</ul>
 			</section>
 	
-			<section id="why">
+			<section id="why" class="grid-12">
 				<h3>Why does The Good Template exist?</h3>
 				<p>
 					Yes, there are tons of templates, but I figured I'd try 
@@ -100,13 +100,12 @@
 				<!-- tables
 						.hasfooter - has a footer
 			 	-->		
-	
-				<table summary="Comparison between different website frameworks" class="hasfooter" cellspacing="0">
-					<!-- yikes TODO -->
+	<table summary="Comparison between different website frameworks" class="hasfooter" cellspacing="0">
+					yikes TODO
 					<caption>
 						Template Comparison
 					</caption>
-	
+					
 					<thead>
 						<tr>
 							<th class="hidden">Feature</th>
@@ -130,21 +129,28 @@
 							<td>No</td>
 							<td>No</td>
 						</tr>
-	
+					
 						<tr>
 							<td>Gruber's Expertise</td>
 							<td>No</td>
 							<td>Yes</td>
 							<td>No</td>
 						</tr>
-	
+						
+						<tr>
+							<td>Twitter's Expertise</td>
+							<td>No</td>
+							<td>No</td>
+							<td>Yes</td>
+						</tr>
+					
 						<tr>
 							<td>What I want</td>
 							<td>Yes</td>
 							<td>No</td>
 							<td>No</td>
 						</tr>
-	
+					
 						<tr>
 							<td>What you want</td>
 							<td>No</td>
@@ -153,7 +159,6 @@
 						</tr>
 					  </tbody>
 				</table>
-	
 				<h4>Please note:</h4>
 	
 				<p>
@@ -172,56 +177,57 @@
 </code></pre>
 			</section>
 	
-			<section id="grid" class="grids">
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-				<div class="grid-1">.grid-1</div>
-	
-				<div class="grid-2">.grid-2</div>
-				<div class="grid-2">.grid-2</div>
-				<div class="grid-2">.grid-2</div>
-				<div class="grid-2">.grid-2</div>
-				<div class="grid-2">.grid-2</div>
-				<div class="grid-2">.grid-2</div>
-	
-				<div class="grid-3">.grid-3</div>
-				<div class="grid-3">.grid-3</div>
-				<div class="grid-3">.grid-3</div>
-				<div class="grid-3">.grid-3</div>
-	
-				<div class="grid-4">.grid-4</div>
-				<div class="grid-4">.grid-4</div>
-				<div class="grid-4">.grid-4</div>
-	
-				<div class="grid-5">.grid-5</div>
-				<div class="grid-5">.grid-5</div>
-	
-				<div class="grid-6">.grid-6</div>
-				<div class="grid-6">.grid-6</div>
-	
-				<div class="grid-7">.grid-7</div>
-	
-				<div class="grid-8">.grid-8</div>
-	
-				<div class="grid-9">.grid-9</div>
-	
-				<div class="grid-10">.grid-10</div>
-	
-				<div class="grid-11">.grid-11</div>
-	
-				<div class="grid-12">.grid-12</div>
+			<section id="grid" class="grid-12 grids">
+				<div class="grids">
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+					<div class="grid-1">.grid-1</div>
+						
+					<div class="grid-2">.grid-2</div>
+					<div class="grid-2">.grid-2</div>
+					<div class="grid-2">.grid-2</div>
+					<div class="grid-2">.grid-2</div>
+					<div class="grid-2">.grid-2</div>
+					<div class="grid-2">.grid-2</div>
+						
+					<div class="grid-3">.grid-3</div>
+					<div class="grid-3">.grid-3</div>
+					<div class="grid-3">.grid-3</div>
+					<div class="grid-3">.grid-3</div>
+						
+					<div class="grid-4">.grid-4</div>
+					<div class="grid-4">.grid-4</div>
+					<div class="grid-4">.grid-4</div>
+						
+					<div class="grid-5">.grid-5</div>
+					<div class="grid-5">.grid-5</div>
+						
+					<div class="grid-6">.grid-6</div>
+					<div class="grid-6">.grid-6</div>
+						
+					<div class="grid-7">.grid-7</div>
+						
+					<div class="grid-8">.grid-8</div>
+						
+					<div class="grid-9">.grid-9</div>
+						
+					<div class="grid-10">.grid-10</div>
+						
+					<div class="grid-11">.grid-11</div>
+						
+					<div class="grid-12">.grid-12</div>
+				</div>
 			</section>
-	
-			<section>
+			<section class="grid-6">
 				<h3>Any questions?</h3>
 	
 				<dl>
@@ -241,12 +247,11 @@
 				</dl>
 			</section>
 	
-			<section id="contact">
+			<section id="contact" class="grid-6">
 				<h3>Contact.</h3>
-	
-	
-				<form action="javascript:void(0)" class="cf grids">
-					<ol class="grid-4">
+				
+				<form action="javascript:void(0)" class="">
+					<ol>
 						<div class="note error">This is an error.</div>
 						<div class="note info">This is information.</div>
 						<div class="note success">This is success.</div>

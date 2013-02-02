@@ -1,8 +1,10 @@
-/* @group Layout & GS */
-
-/* @group Clearfix */
-/* http://nicolasgallagher.com/micro-clearfix-hack/ */
-
+/* ==========================================================================
+   Grids
+   ========================================================================== */
+   
+/**
+ * Clearfix: http://nicolasgallagher.com/micro-clearfix-hack/
+ */
 .cf {
     zoom:1;
     
@@ -17,18 +19,16 @@
     }
 }
 
-/* @end */
-
-/* How the layouts work 
-	
-	20rem-42rem - fixed mobile
-	42rem-60rem - small desktop
-	60rem-infin - desktop
-*/
+/**
+ *	Responsive Grid 
+ *	20rem-42rem - fixed mobile
+ *	42rem-60rem - small desktop
+ *	60rem-infin - desktop
+ */
 
 /* @group Basic (<30rem) */
 body {
-	margin: 1.3125rem auto;
+	margin: @line auto;
 	min-width: 20rem;
 }
 	
@@ -73,24 +73,26 @@ body {
 		width: 100%;
 	}
 	
-	[class^="grid-"]{
+	[class^="grid-"] {
 		float:left;
-		margin: 0 0 0 1.5rem;
 		padding: 0 1.5rem;
 		width: 100%;
+		
+		margin: 0 1.5rem 0 0;
+		.grids & { margin:0 0 0 1.5rem; }
 	}
+	
+	.grids { margin: 0 0 0 -1.5rem; }
 	
 	/* Allow nested grids: */
 	[class^="grid-"] .grids {
 		width:auto;
 		padding: 0;
-		margin-left: -1.5rem;
+		margin-left: -3rem;
 	}
-
-	.grids { margin: 0 0 0 -1.5rem; }
 	
-	[class^="grid-"] { margin: 0 0 0 1.5rem;	
-		/* .grids & { margin:0 0 0 10px; } */ } 
+	[class^="grid-"] { margin: 0 1.5rem 0 0;	
+	 } 
 
 	@body-width: 40rem;
 	@total-columns: 12;

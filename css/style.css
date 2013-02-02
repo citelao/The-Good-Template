@@ -369,22 +369,13 @@ table {
  */
 /**
 * Handle typography based on aforementioned text-sizing variables
-* 1. Prevent breaks of baseline
+* 1. Make sure line-height is an interval of the baseline.
 */
 /* ==========================================================================
    Base
    ========================================================================== */
 body {
   font: 1rem / 1.3125 sans-serif;
-}
-blockquote,
-h5,
-h6,
-h7,
-dl,
-p,
-pre {
-  margin-bottom: 1.3125rem;
 }
 /* ==========================================================================
    Headers
@@ -424,43 +415,84 @@ h7  > strong,
 .eta  > strong {
   font-variant: small-caps;
 }
+/**
+ * Boring header styles
+ */
 h1,
 .alpha {
   font-size: 2.625rem;
   line-height: 1;
-  margin: 0 0 1.3125rem 0;
+  /* 1 */
+
+  padding: 0 0 1.3125rem 0;
+  margin: 0;
 }
 h2,
 .beta {
   font-size: 1.625rem;
   line-height: 1.6153846153846154;
-  margin: 0 0 1.3125rem 0;
+  /* 1 */
+
+  padding: 0 0 1.3125rem 0;
+  margin: 0;
 }
 h3,
 .gamma {
   font-size: 1.25rem;
   line-height: 1.05;
-  margin: 0 0 1.3125rem 0;
+  /* 1 */
+
+  padding: 0 0 1.3125rem 0;
+  margin: 0;
 }
 h4,
 .delta {
   font-size: 1rem;
   line-height: 1.3125;
-  margin: 0 0 1.3125rem 0;
+  /* 1 */
+
+  padding: 0 0 1.3125rem 0;
+  margin: 0;
+}
+h5,
+.epsilon {
+  font-size: 1rem;
+  line-height: 1.3125;
+  /* 1 */
+
+  padding: 0 0 1.3125rem 0;
+  margin: 0;
+}
+h6,
+.zeta {
+  font-size: 1rem;
+  line-height: 1.3125;
+  /* 1 */
+
+  padding: 0 0 1.3125rem 0;
+  margin: 0;
+}
+h7,
+.eta {
+  font-size: 1rem;
+  line-height: 1.3125;
+  /* 1 */
+
+  padding: 0 0 1.3125rem 0;
+  margin: 0;
 }
 /* ==========================================================================
-   Inline
+   Inline elements
    ========================================================================== */
 big {
   font-size: 1.125rem;
-  line-height: 0;
-  /* 1 */
-
+  line-height: 1;
 }
 code {
   border-radius: .125rem;
   color: #93a1a1;
-  font-family: Menlo, monospace;
+  font: .9rem Menlo, monospace;
+  line-height: 1.3125rem;
   margin: .25rem 0;
   padding: .25rem;
   -moz-box-shadow: inset 0 0 0.0625rem rgba(0, 0, 0, 0.5);
@@ -468,10 +500,9 @@ code {
   box-shadow: inset 0 0 0.0625rem rgba(0, 0, 0, 0.5);
   background-color: #002b36;
 }
-pre > code {
-  display: block;
-  margin: .8125rem 0;
-  overflow-x: scroll;
+pre {
+  padding: 0.59375rem 0 0.65625rem;
+  margin: 0;
 }
 /**
  * I've never had a use case for `del`, but whatever.
@@ -505,22 +536,13 @@ ins {
   text-decoration: none;
   border-bottom: 0.0625rem solid;
 }
-/**
- * In the absence of a semantic way of doing hanging punctuation, remove quotes
- */
-q:after,
-q:before {
-  content: '';
-}
 strong {
   font-weight: bold;
 }
 sub,
 sup {
   font-size: 0.625rem;
-  line-height: 0;
-  /* 1 */
-
+  line-height: 1;
 }
 sub {
   vertical-align: sub;
@@ -530,16 +552,14 @@ sup {
 }
 small {
   font-size: 0.8125rem;
-  line-height: 0;
-  /* 1 */
-
+  line-height: 1;
 }
 /* ==========================================================================
    Block-level
    ========================================================================== */
 blockquote {
-  margin-left: 0;
-  padding-left: 0.7875rem;
+  margin: 0 0 1.3125rem 0;
+  padding: 0 0 0 0.7875rem;
   border-left: 0.525rem solid #999999;
 }
 blockquote > small {
@@ -561,6 +581,13 @@ blockquote > small:before {
 }
 .ir br {
   display: none;
+}
+p {
+  margin: 0;
+  padding-bottom: 1.3125rem;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 /* ==========================================================================
    Links
@@ -587,14 +614,14 @@ a:active {
    ========================================================================== */
 ol,
 ul {
-  margin: 0 0 1.3125rem 1.3125rem;
-  padding: 0;
+  padding: 0 0 1.3125rem 1.3125rem;
+  margin: 0;
 }
 ol ol,
 ul ol,
 ol ul,
 ul ul {
-  margin-bottom: 0;
+  padding-bottom: 0;
 }
 ol {
   list-style: decimal;
@@ -607,7 +634,7 @@ ul {
 }
 ul.unmarked {
   list-style: none;
-  margin-left: 0;
+  padding-left: 0;
 }
 /* ==========================================================================
    Tooltips
@@ -634,19 +661,30 @@ acronym:hover:after,
   padding: .3125rem;
   z-index: 100;
 }
-/* @group Table */
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Give a half-line margin to allow for half-line padding around table cells
+ * TODO: Why does `padding` not work?
+ */
 table {
-  margin: 0.65625rem 0.65625rem 0.71875rem;
-  padding-top: 0.65625rem;
+  margin: 0.65625rem 0 0.71875rem;
 }
 caption {
-  display: none;
+  font-weight: bold;
+  padding: 0.65625rem 0;
 }
 th,
 td {
-  border-bottom: 0.0625rem solid #333333;
-  border-right: 0.0625rem solid #333333;
-  padding: 0.65625rem;
+  border-bottom: 0.0625rem solid;
+  border-right: 0.0625rem solid;
+  padding: 0.65625rem 1.3125rem;
+  vertical-align: baseline;
+}
+th:last-child,
+td:last-child {
+  border-right: 0;
 }
 th,
 tfoot td {
@@ -655,26 +693,23 @@ tfoot td {
 }
 table.hasfooter tfoot td {
   border-bottom: 0;
-  padding-bottom: 0.65625rem;
 }
-th:last-child,
-td:last-child {
-  border-right: 0;
+/* ==========================================================================
+   Definition Lists
+   ========================================================================== */
+dl {
+  margin: 0;
+  padding-bottom: 1.3125rem;
 }
-table .hidden {
-  text-indent: -9999em;
-  overflow: hidden;
-}
-/* @end */
-/* @group Definition Lists */
 dt {
   font-weight: bold;
 }
 dd {
   margin-left: 1.3125rem;
 }
-/* @end */
-/* @group Form */
+/* ==========================================================================
+   Forms
+   ========================================================================== */
 .button {
   background: -moz-linear-gradient(90deg, #6565d6 0%, #7979db 100%) #7979db;
   background: -webkit-gradient(linear, left top, left bottom, from(#7979db), to(#6565d6)) #7979db;
@@ -710,9 +745,7 @@ form aside {
   color: #999;
   display: block;
   font-size: 0.8125rem;
-  line-height: 0;
-  /* 1 */
-
+  line-height: 1;
   font-variant: small-caps;
   padding: 0.65625rem 0;
   text-align: center;
@@ -721,11 +754,11 @@ form .secondary {
   float: right;
   padding-top: 1.3125rem;
 }
-form > ol {
+form  > ol {
   list-style: none;
   margin: 0;
 }
-form > ol li {
+form  > ol li {
   padding-bottom: 1.3125rem;
 }
 input,
@@ -760,18 +793,22 @@ select {
 select.disabled {
   color: #aaa;
 }
-/* @group Labels */
+::-webkit-input-placeholder {
+  vertical-align: bottom;
+}
+:-moz-placeholder {
+  vertical-align: bottom;
+}
+/* ==========================================================================
+   Labels
+   ========================================================================== */
 label,
 .label {
   display: block;
   font-weight: bold;
 }
-label.inline,
-.label.inline {
-  font-weight: normal;
-}
-/* @group Inlined Labels */
-label.inlined {
+label.inlined,
+.label.inlined {
   color: #666;
   font-weight: normal;
   padding: 21px 0 0 0;
@@ -790,28 +827,24 @@ label.inlined {
   opacity: 0.1;
   right: 13px;
 }
-/* @end */
-::-webkit-input-placeholder {
-  vertical-align: bottom;
-}
-:-moz-placeholder {
-  vertical-align: bottom;
-}
-/* @end */
-/* @group Notifications */
+/* ==========================================================================
+   Notes
+   ========================================================================== */
 .note {
   background-color: rgba(126, 126, 205, 0.52);
   border-radius: 2px;
+  border-top: 1px #000 solid;
   text-align: center;
-  margin-bottom: 1.3125rem;
+  margin: 0.59375rem 0 1.3125rem;
   padding: 0.65625rem 0;
   width: 100%;
 }
-/* @end */
-/* @end */
-/* @group Layout & GS */
-/* @group Clearfix */
-/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* ==========================================================================
+   Grids
+   ========================================================================== */
+/**
+ * Clearfix: http://nicolasgallagher.com/micro-clearfix-hack/
+ */
 .cf {
   zoom: 1;
 }
@@ -823,13 +856,12 @@ label.inlined {
 .cf:after {
   clear: both;
 }
-/* @end */
-/* How the layouts work 
-	
-	20rem-42rem - fixed mobile
-	42rem-60rem - small desktop
-	60rem-infin - desktop
-*/
+/**
+ *	Responsive Grid 
+ *	20rem-42rem - fixed mobile
+ *	42rem-60rem - small desktop
+ *	60rem-infin - desktop
+ */
 /* @group Basic (<30rem) */
 body {
   margin: 1.3125rem auto;
@@ -876,22 +908,24 @@ body {
   }
   [class^="grid-"] {
     float: left;
-    margin: 0 0 0 1.5rem;
     padding: 0 1.5rem;
     width: 100%;
+    margin: 0 1.5rem 0 0;
+  }
+  .grids [class^="grid-"] {
+    margin: 0 0 0 1.5rem;
+  }
+  .grids {
+    margin: 0 0 0 -1.5rem;
   }
   /* Allow nested grids: */
   [class^="grid-"] .grids {
     width: auto;
     padding: 0;
-    margin-left: -1.5rem;
-  }
-  .grids {
-    margin: 0 0 0 -1.5rem;
+    margin-left: -3rem;
   }
   [class^="grid-"] {
-    margin: 0 0 0 1.5rem;
-    /* .grids & { margin:0 0 0 10px; } */
+    margin: 0 1.5rem 0 0;
   }
   body {
     width: 40rem;
@@ -1110,7 +1144,7 @@ footer {
 	text-align: center;
 } *//* @group Debug */
 .debug body {
-  background: url('../img/debug/baseline.png');
+  background: url('../img/debug/baseline-alt.png');
 }
 .debug #wrapper {
   background: rgba(137, 135, 243, 0.1);

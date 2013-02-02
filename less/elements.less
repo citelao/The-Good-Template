@@ -1,43 +1,50 @@
-/* @group Table */
+/* ==========================================================================
+   Tables
+   ========================================================================== */
 
-	table {
-		margin: (@line * .5) (@line * .5) (@line * .5 + @single-size);
-		padding-top: @line * .5;
-	}
-	
-	caption {
-		display: none;
-	}
-	
-	th, td {
-		border-bottom: @single-size solid #333;
-		border-right: @single-size solid #333;
-		padding: @line * .5;
-	}
-	
-		th,
-		tfoot td {
-			font-weight: bold;
-			text-align: center;
-		}
-		
-		table.hasfooter tfoot td {
-			border-bottom: 0;
-			padding-bottom: @line * .5;
-		}
-		
-		th:last-child,
-		td:last-child {
-			border-right: 0;
-		}
-		
-		table .hidden {
-			text-indent: -9999em;
-			overflow: hidden;
-		}
-/* @end */
+/**
+ * Give a half-line margin to allow for half-line padding around table cells
+ * TODO: Why does `padding` not work?
+ */
+table {
+	margin: (@line * .5) 0 (@line * .5 + @single-size);
+}
 
-/* @group Definition Lists */
+caption {
+	font-weight: bold;
+	padding: (@line * .5) 0;
+}
+
+th, td {
+	border-bottom: @single-size solid;
+	border-right: @single-size solid;
+	padding: (@line * .5) @line;
+	vertical-align: baseline;
+	
+	&:last-child {
+		border-right: 0;
+	}
+}
+
+th,
+tfoot td {
+	font-weight: bold;
+	text-align: center;
+}
+	
+	table.hasfooter tfoot td {
+		border-bottom: 0;
+	}
+
+/* ==========================================================================
+   Definition Lists
+   ========================================================================== */
+
+dl {
+	margin: 0;
+	padding-bottom: @line;
+}
+
 dt {
 	font-weight: bold;
 }
@@ -45,9 +52,11 @@ dt {
 dd {
 	margin-left: @line;
 }
-/* @end */
 
-/* @group Form */
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
 @buttonColor: #7979db;
 
 .button {
@@ -102,14 +111,14 @@ form {
 		float: right;
 		padding-top: @line;
 	}
-}
-
-form > ol {
+	
+	& > ol {
 	list-style: none;
 	margin: 0;
-	
-	li {
-		padding-bottom: @line;
+
+		li {
+			padding-bottom: @line;
+		}
 	}
 }
 
@@ -150,22 +159,25 @@ select {
 			color: #aaa;
 		}
 	}
-
-/* @group Labels */
-
-	label,
-	.label {
-		display: block;
-		font-weight: bold;
-		
-		&.inline {
-			font-weight: normal;
-		}
-	}
-
-	/* @group Inlined Labels */
 	
-	label.inlined {
+::-webkit-input-placeholder {
+	vertical-align: bottom;
+}
+
+:-moz-placeholder  {
+	vertical-align: bottom;
+}
+
+/* ==========================================================================
+   Labels
+   ========================================================================== */
+
+label,
+.label {
+	display: block;
+	font-weight: bold;
+	
+	&.inlined {
 		color: #666;
 		font-weight: normal;
 		padding: 21px 0 0 0;
@@ -174,38 +186,30 @@ select {
 		right: 20px;
 		-webkit-transition: all 0.2s ease-in-out;
 	}
-	
-	.focus label.inlined {
-		opacity: 1;
-		right: 13px;
-		-webkit-transition: opacity 0.1s ease-in-out;
-		-webkit-transition: right 0.1s ease-in-out;
-	}
-	
-	.has-text label.inlined {
-		opacity: 0.1;
-		right: 13px;
-	}
-	
-	/* @end */
-
-::-webkit-input-placeholder {
-	vertical-align: bottom;
 }
 
-:-moz-placeholder  {
-	vertical-align: bottom;
+.focus label.inlined {
+	opacity: 1;
+	right: 13px;
+	-webkit-transition: opacity 0.1s ease-in-out;
+	-webkit-transition: right 0.1s ease-in-out;
 }
-/* @end */
 
-/* @group Notifications */
-	.note {
-		background-color: rgba(126, 126, 205, 0.52);
-		border-radius: 2px;
-		text-align: center;
-		margin-bottom: @line;
-		padding: (@line * .5) 0;
-		width: 100%;
-	}
-/* @end */
-/* @end */
+.has-text label.inlined {
+	opacity: 0.1;
+	right: 13px;
+}
+
+/* ==========================================================================
+   Notes
+   ========================================================================== */
+
+.note {
+	background-color: rgba(126, 126, 205, 0.52);
+	border-radius: 2px;
+	border-top: 1px #000 solid;
+	text-align: center;
+	margin: (@line * .5 - @single-size) 0 (@line);
+	padding: (@line * .5) 0;
+	width: 100%;
+}
